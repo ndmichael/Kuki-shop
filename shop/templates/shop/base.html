@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>Bebe-Textiles-{{ title }}</title>
+    {% else %}
+        <title>Bebe-Textiles</title>
+    {% endif %}
+<link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/icofont/icofont.min.css' %}" />
+</head>
+<body>
+<div class="cart container-fluid">
+    <div class="row">
+    {% with total_items=cart|length %}
+        {% if cart|length > 0 %}
+            Your cart:
+
+            <a href="{% url "cart:cart_detail" %}">
+                {{ total_items }} item{{ total_items|pluralize }},
+                &#x20A6;{{ cart.get_total_price }}
+            </a>
+        {% else %}
+            Your cart is empty.
+        {% endif %}
+    {% endwith %}
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Textiles
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Shadda</a>
+          <a class="dropdown-item" href="#">Ankara</a>
+          <a class="dropdown-item" href="#">Abaya</a>
+          <a class="dropdown-item" href="#">Men Yards</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Viels</a>
+            <a class="dropdown-item" href="#">Lifaya</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% block content %}
+
+{% endblock content %}
+
+
+<script src="{% static 'shop/js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
