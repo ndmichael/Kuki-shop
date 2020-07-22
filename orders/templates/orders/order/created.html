@@ -1,0 +1,18 @@
+{% extends 'shop/base.html' %}
+{%  load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12">
+                <h1>THANK YOU</h1>
+                <h3>Your order has been successfully created, your order number is </h3>
+                <p><strong>{{ order.id }}</strong></p>
+            </div>
+
+        </div>
+    </div>
+
+{%  endblock content %}
