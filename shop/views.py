@@ -5,6 +5,14 @@ from cart.forms import CartAddForm
 # Create your views here.
 
 
+def index(request):
+    categories = Category.objects.all()
+    context = {
+        'categories': categories
+    }
+    return render(request, 'shop/index.html', context)
+
+
 def product_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
