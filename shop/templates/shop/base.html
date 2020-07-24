@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     {% if title %}
-        <title>Bebe-Textiles-{{ title }}</title>
+        <title>Kuki-Textiles-{{ title }}</title>
     {% else %}
-        <title>Bebe-Textiles</title>
+        <title>Kuki-Textiles</title>
     {% endif %}
 <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" href="{% static 'shop/css/icofont/icofont.min.css' %}" />
@@ -116,12 +116,13 @@
                     </ul>
                 </div>
                 <div class="col-6 col-md-2">
-                    <i class="icofont icofont-3x icofont-arrow-up">  </i>
+                    <p>&copy; copyright, developed 2020, all right reserved</p>
+                   <i class="icofont icofont-3x icofont-arrow-up" id="topBtn" onclick="topFunction()" title="to top">  </i>
                 </div>
             </div>
             <div class="row dev-details pt-3">
                 <div class="col-md-12">
-                    <p>This site was Develop by Michael, it is built on Django, Javascript and Bootstrap</p>
+                    <p>This site was built on Django, Javascript and Bootstrap. <br /><a class="developer" href="www.codeja-vu.dx.am" target="_blank">See Developer</a></p>
                     <p>Terms | Condition</p>
                 </div>
             </div>
@@ -162,6 +163,13 @@
       loop: true
   });
 
+</script>
+
+
+<script>
+    const  topFunction =()=>{
+        document.documentElement.scrollTop = 0;
+    }
 </script>
 </body>
 </html>
