@@ -4,71 +4,172 @@
 <head>
     <meta charset="UTF-8">
     {% if title %}
-        <title>Bebe-Textiles-{{ title }}</title>
+        <title>Kuki-Textiles-{{ title }}</title>
     {% else %}
-        <title>Bebe-Textiles</title>
+        <title>Kuki-Textiles</title>
     {% endif %}
 <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" href="{% static 'shop/css/icofont/icofont.min.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/kuki.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/footerCss.css' %}" />
+
 </head>
 <body>
-<div class="cart container-fluid">
-    <div class="row">
-    {% with total_items=cart|length %}
-        {% if cart|length > 0 %}
-            Your cart:
+    <nav class="navbar navbar-expand-lg  navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'shop:shop-home' %}">KUKI-SHOP</a>
+            <ul class=" navbar-nav ml-auto">
+                <li>
+                    {% with total_items=cart|length %}
+                        {% if cart|length > 0 %}
+                            <a href="{% url "cart:cart_detail" %}">
 
-            <a href="{% url "cart:cart_detail" %}">
-                {{ total_items }} item{{ total_items|pluralize }},
-                &#x20A6;{{ cart.get_total_price }}
-            </a>
-        {% else %}
-            Your cart is empty.
-        {% endif %}
-    {% endwith %}
-    </div>
-</div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+                                <span class="icofont icofont-2x icofont-ui-cart">
+                                </span>
+                                <span class="badge">{{ total_items }}</span>
+{#                                item{{ total_items|pluralize }}#}
+                            </a>
+                        {% else %}
+                            <i class="icofont icofont-2x icofont-ui-cart"></i>
+                            <span class="badge">0</span>
+                        {% endif %}
+                    {% endwith %}
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse float-md-right" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'shop:shop-home' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            Textiles
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{% url "shop:product_list" %}">All products</a>
+{#                            {{ categories }}#}
+                            {% for c in categories %}
+                                <a class="dropdown-item" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                            {% endfor %}
+{#                            <a class="dropdown-item" href="{% url "get" %}">Ankara</a>#}
+{#                            <a class="dropdown-item" href="#">Laces</a>#}
+{#                            <a class="dropdown-item" href="#">Lifaya</a>#}
+{#                            <a class="dropdown-item" href="#">Men's Yard</a>#}
+{#                            <a class="dropdown-item" href="#">Shadda</a>#}
+{#                            <a class="dropdown-item" href="#">Viels</a>#}
+                        </div>
+                    </li>
+                </ul>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Textiles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Shadda</a>
-          <a class="dropdown-item" href="#">Ankara</a>
-          <a class="dropdown-item" href="#">Abaya</a>
-          <a class="dropdown-item" href="#">Men Yards</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Viels</a>
-            <a class="dropdown-item" href="#">Lifaya</a>
+            </div>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    </nav>
 
 {% block content %}
 
 {% endblock content %}
 
 
+    <section id="footer-section">
+        <footer class="container">
+            <div class="row">
+
+                <div class="col-6 col-md-5">
+                    <h3>Kuki Textile Shop</h3>
+                    <ul>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'shop:shop-home' %}">Home <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shop</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-6 col-md-5">
+                    <h3>Socialize With Us</h3>
+                    <ul>
+                        <li>
+                            <span><a  href="#"><i class="icofont icofont-facebook pr-2"></i>Facebook</a></span>
+                        </li>
+                        <li class="nav-item">
+                            <span><a  href="#"><i class="icofont icofont-instagram pr-2"></i>Instagram</a></span>
+                        </li>
+                        <li>
+                            <span><a href="#"><i class="icofont icofont-twitter pr-2"></i>Twitter</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <p>&copy; copyright, developed 2020, all right reserved</p>
+                   <i class="icofont icofont-3x icofont-arrow-up" id="topBtn" onclick="topFunction()" title="to top">  </i>
+                </div>
+            </div>
+            <div class="row dev-details pt-3">
+                <div class="col-md-12">
+                    <p>This site was built on Django, Javascript and Bootstrap. <br /><a class="developer" href="www.codeja-vu.dx.am" target="_blank">See Developer</a></p>
+                    <p>Terms | Condition</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
 <script src="{% static 'shop/js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
+
+ <script>
+    jQuery(document).ready(($) => {
+        $('.counter').counterUp({
+            time: 2000,
+            delay: 10,
+            repeat: true
+
+        });
+    });
+
+</script>
+<script src="{% static 'shop/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'shop/js/jquery.counterup.min.js' %}"></script>
+
+    <script src="{% static 'shop/js/typed.min.js' %}"></script>
+
+
+
+
+<script>
+  var typed = new Typed('.typing-text', {
+    strings: [
+        "Cheap and Affordable Textiles!",
+        "Quick Delivery with Discount!!",
+        "Look Beautiful the Native Way !!! ^1000"
+    ],
+      typeSpeed: 100,
+      backSpeed: 70,
+      loop: true
+  });
+
+</script>
+
+
+<script>
+    const  topFunction =()=>{
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 </body>
 </html>
