@@ -1,0 +1,11 @@
+.product-wrapper{
+	padding: 20px;
+	margin: 4em 0em auto;
+	background: rgba(255, 255, 255, 0.6);
+	text-align: left;
+
+}
+
+#product-listing{
+    padding: 0 4.5em;
+}

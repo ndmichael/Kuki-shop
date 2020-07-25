@@ -1,3 +1,4 @@
+#kukishop/settings.py
 .idea
 
 # Django #
@@ -8,7 +9,6 @@ __pycache__
 db.sqlite3
 media
 kukishop_env
-
 
 # Backup files #
 *.bak
