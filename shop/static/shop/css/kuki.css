@@ -30,12 +30,13 @@ body{
     color: #fff;
     background: linear-gradient(#00dcff , #004c5c);
 	transition: opacity .5s;
-	border: none;
-	outline: none;
+	border: none !important;
+	outline: none !important;
 }
 
-.btn-primary:hover{
+.btn-primary:hover, .btn-primary:active{
 	opacity: 0.7;
+	outline: none !important;
 }
 
 
@@ -80,7 +81,7 @@ p{
 }
 
 .icofont-ui-cart:hover{
-	color: #004c5c;
+	color: #33a1c9;
 }
 
 .navbar-expand-lg a{
@@ -92,7 +93,7 @@ p{
 /***** The css style for the badge *****/
 ul .badge {
 	/* color: #2F92CA; */
-	color: #33a1c9;
+	color: #004c5c;
 	background-color: #FFF;
 	font-size: 1em;
 	/*padding: 0.27rem 0.55rem 0.2rem 0.4rem;*/
@@ -194,6 +195,7 @@ section#shop-collections{
 
 section#shop-collections .category-wrapper:hover .text-pin{
 	filter: opacity(0.7);
+	
 }
 
 section#shop-collections .category-wrapper:hover .collection-photos{
@@ -218,6 +220,10 @@ section#shop-collections a{
 	padding: 5px;
 	display: inline-block;
 
+}
+
+.text-pin:hover{
+	color: #004c5c;
 }
 
 .collection-photos{
@@ -308,5 +314,10 @@ section#shop-collections .category-wrapper{
 	display: inline-block;
 }
 
+/************** Cart *****************/
 
+.cart-img {
+    max-height: 150px;
+    width: 100%;
+}
 
