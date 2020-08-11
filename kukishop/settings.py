@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from braintree import Configuration, Environment # braintree sandbox import 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -139,3 +142,17 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # cart session key
 CART_SESSION_ID = 'cart'
+
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = '6jymvn97hxkwmwkk' # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'np7yrdnkhz8h7dj2' # Public Key
+BRAINTREE_PRIVATE_KEY = 'f8a14f52b496e4465cfb2e1684a075ec' # Private key
+
+Configuration.configure(
+Environment.Sandbox,
+BRAINTREE_MERCHANT_ID,
+BRAINTREE_PUBLIC_KEY,
+BRAINTREE_PRIVATE_KEY
+)
+
