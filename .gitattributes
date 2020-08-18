@@ -1,6 +1,6 @@
-*.python linguist-detectable=true
- *.js linguist-detectable=true
- *.html linguist-detectable=false
- *.css linguist-detectable=false
+# *.python linguist-detectable=true
+#  *.js linguist-detectable=true
+#  *.html linguist-detectable=false
+#  *.css linguist-detectable=false
 *linguist-vendored
-# *.* linguist-language=python
+*.* linguist-language=python
