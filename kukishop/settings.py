@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from braintree import Configuration, Environment # braintree sandbox import 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 
 ]
 
@@ -135,7 +135,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -147,15 +149,27 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CART_SESSION_ID = 'cart'
 
 
-# Braintree settings
-BRAINTREE_MERCHANT_ID = '6jymvn97hxkwmwkk' # Merchant ID
-BRAINTREE_PUBLIC_KEY = 'np7yrdnkhz8h7dj2' # Public Key
-BRAINTREE_PRIVATE_KEY = 'f8a14f52b496e4465cfb2e1684a075ec' # Private key
+# setting environmental variables for S3
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_ACCESS_KEY_ID = 'AKIATNFMYF55OBBU7IN6'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = "django-kukishop-files"
 
+AWS_S3_FILE_OVERWRITE = False
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_DEFAULT_UCL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = '6jymvn97hxkwmwkk', # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'np7yrdnkhz8h7dj2', # Public Key
+BRAINTREE_PRIVATE_KEY = 'f8a14f52b496e4465cfb2e1684a075ec'  # Private key
+from braintree import Configuration, Environment
 Configuration.configure(
 Environment.Sandbox,
-BRAINTREE_MERCHANT_ID,
-BRAINTREE_PUBLIC_KEY,
-BRAINTREE_PRIVATE_KEY
+    '6jymvn97hxkwmwkk',
+    'np7yrdnkhz8h7dj2',
+    'f8a14f52b496e4465cfb2e1684a075ec'
 )
-
