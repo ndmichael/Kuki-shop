@@ -1,4 +1,5 @@
 from django.shortcuts import render
+<<<<<<< Updated upstream
 from .models import OrderItem, Order
 from .forms import OrderForm
 from cart.cart import Cart
@@ -12,6 +13,11 @@ from django.template.loader import render_to_string
 from django.contrib.admin.views.decorators import staff_member_required
 import weasyprint
 
+=======
+from .models import OrderItem
+from .forms import OrderForm
+from cart.cart import Cart
+>>>>>>> Stashed changes
 
 # Create your views here.
 
@@ -29,6 +35,7 @@ def order_create(request):
 
             # afterward successful order clear cart
             cart.clear()
+<<<<<<< Updated upstream
             order_created.delay(order.id) 
 
             # set order in session
@@ -37,10 +44,14 @@ def order_create(request):
             # redirect to payment
             return redirect(reverse('payment:process'))
             # return render(request, 'orders/order/created.html', {'order': order})
+=======
+            return render(request, 'orders/order/created.html', {'order': order})
+>>>>>>> Stashed changes
 
     else:
         form = OrderForm
     return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
+<<<<<<< Updated upstream
 
 
 @staff_member_required
@@ -51,3 +62,5 @@ def admin_order_pdf(request, order_id):
     response['Content-Disposition'] = 'filename= "order_{}.pdf"'.format(order.id)
     weasyprint.HTML(string=html).write_pdf(response, stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')])
     return response
+=======
+>>>>>>> Stashed changes

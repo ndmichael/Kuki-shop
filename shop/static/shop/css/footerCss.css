@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 /* ----------- Footer Section css  --------------- */
+=======
+/* -----------Footer css  --------------- */
+>>>>>>> Stashed changes
 
 #footer-section{
     background: #252525;
@@ -21,6 +25,10 @@
     text-decoration: none;
     color:  #f8f9fa;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 }
 
 #footer-section ul a:hover{
@@ -45,6 +53,7 @@
 	background-clip: text;
 	color: transparent;
 
+<<<<<<< Updated upstream
 }
 
 #footer-section .dev-details{
@@ -72,4 +81,6 @@
 
 #footer-section .developer:hover{
     filter: opacity(0.5);
+=======
+>>>>>>> Stashed changes
 }
