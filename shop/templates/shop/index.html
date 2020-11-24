@@ -1,0 +1,226 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!--
+    Note: The body acts as the overall wrapper for the index page.
+    i see no reason adding extra tags
+    Apart from the nav it contains about 6 section layer steps
+
+
+    The landing page banner and background image
+     -->
+    <section id="landing-page" >
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 col-md-6 landing-page-details">
+                    <p>
+                        <span class="typing-text" style="color:gold;"></span>
+                    </p>
+                    <h1>
+                        At Kuki-Textile Shop, What we Offer??
+                    </h1>
+                    <p>
+                        We sell variety of highly quality textiles at cheap and affordable price.
+
+                        <!-- Kano has the biggest textile industry in west africa, and Kuki-Textile shop has been
+                        known as one of the leading textile companies in Kano. -->
+                        Shop for your textiles today i.e Ankara, Laces, Lifaya, men yards...
+                    </p>
+                    <p><a href="{% url "shop:product_list" %}" class="btn btn-lg btn-primary">Shop Now</a> <button class="btn btn-lg btn-outline-light">Know More</button></p>
+
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="ml-auto" >
+{#                            <img src="{%  static "shop/image/IMG-20200605-WA0046.jpg" %}"  />#}
+{#                            <img src="{%  static "shop/image/IMG-20200605-WA0047.jpg" %}"   />#}
+{#                            <img src="{%  static "shop/image/IMG-20200605-WA0048.jpg" %}"  />#}
+{#                            <img src="{%  static "shop/image/IMG-20200605-WA0046.jpg" %}"  />#}
+{#                            <img src="{%  static "shop/image/IMG-20200605-WA0046.jpg" %}" CLASS="img-fluid " style="opacity: 0.7;" />#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- shop services, offers section -->
+    <section id="shop-goals">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <div class="row" style="margin: 4em auto" >
+                        <div class="col-12 col-sm-6 col-md-12 mb-5 goals-items shadow-type1" id="s-customers">
+                            <p class="icon-p"><i class="icofont icofont-3x icofont-handshake-deal"></i></p>
+                            <h3>Satisfied Customers</h3>
+                            <p>
+                                Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.
+                                Consectetur anim minim in tempor sit. Et consectetur ea in pariatur.
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-12 goals-items shadow-type2" id="s-discount">
+                            <p class="icon-p"><i class="icofont icofont-3x icofont-sale-discount"></i>
+                            <h3>Sales Discount</h3>
+                            <p>
+                                Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.
+                                Consectetur anim minim in tempor sit. Et consectetur ea in pariatur.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" >
+                    <div id="s-model">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row" style="margin: 4em auto" >
+                        <div class="col-12 col-sm-6 col-md-12 mb-5 goals-items shadow-type2" id="s-products">
+                            <p><i class="icofont icofont-3x icofont-stamp"></i></p>
+                            <h3>Original Products</h3>
+                            <p>
+                                Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.
+                                Consectetur anim minim in tempor sit. Et consectetur ea in pariatur.</p>
+                        </div>
+                        <hr/>
+                        <div class="col-12 col-sm-6 col-md-12 goals-items shadow-type1" id="s-security">
+                            <p><i class="icofont icofont-3x icofont-ssl-security"></i></p>
+                            <h3>Shop as a Guest</h3>
+                            <p>
+                                Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.
+                                Consectetur anim minim in tempor sit. Et consectetur ea in pariatur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- shop categories  Dynamically listed and linked -->
+    <section id="shop-collections">
+        <section class="container" >
+                <h2>Our Textile Categories</h2>
+            <div class="row">
+                {% for c in categories %}
+                    <a href="{{ c.get_absolute_url }}">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 ">
+
+                            <div class="category-wrapper">
+                                <img src="{{ c.cat_image.url }}" class="w-100 img-fluid collection-photos"
+                                     alt="{{ c.name }} "/>
+                                <h3><a class="text-pin" href="{{ c.get_absolute_url }}">{{ c.name }}  </a></h3>
+                            </div>
+
+                    </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    </section>
+
+    <!-- testimonial section -->
+    <section id="testimonial-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                    <i id="smiling-customer" class="icofont icofont-5x icofont-wink-smile"></i>
+                    <p><strong>Happy Customers, Great Business</strong> </p>
+                    <h3> Testimonial</h3>
+                </div>
+                <br />
+                <div class="col-md-8">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <i class="icofont icofont-2x icofont-quote-left"></i>
+                                <p>Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.</p>
+                                <h4 class="h6">Fashion Designer/ Celebrity Tailor</h4>
+                                <h5>Abubakar Saleh</h5>
+{#                                <img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First testimonial">#}
+                            </div>
+                            <div class="carousel-item">
+                                <i class="icofont icofont-2x icofont-quote-left"></i>
+                                <p>Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.
+                                Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.</p>
+                                <h5 class="h6">Business Owner</h5>
+                                <h5>Chike Ciroma</h5>
+{#                                <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide"#}
+{#                                     alt="Second slide">#}
+                            </div>
+                            <div class="carousel-item">
+                                <i class="icofont icofont-2x icofont-quote-left"></i>
+                                <p>Nisi magna esse reprehenderit aliqua ut Lorem mollit laboris exercitation occaecat dolor
+                                laboris nisi est.</p>
+
+                                <h5 class="h6">Trader and Fashion Stylist</h5>
+                                <h5>Tunde Olabisi</h5>
+
+{#                                <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">#}
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                               data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                               data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- stat section -->
+    <section id="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-6 col-md-3">
+                    <i class="icofont icofont-5x icofont-people"></i>
+                    <h2><span class="counter">13000</span> <span>+</span> </h2>
+                    <p>Customers</p>
+
+                </div>
+
+                <div class="col-6 col-sm-6 col-md-3">
+                    <i class="icofont icofont-5x icofont-sale-discount"></i>
+                    <h2><span class="counter">1000000</span> <span>+</span></h2>
+                    <p>Sales</p>
+
+                </div>
+
+                <div class="col-6 col-sm-6 col-md-3">
+                    <i class="icofont icofont-5x icofont-users-alt-5"></i>
+                    <h2><span class="counter">9000</span> <span>+</span></h2>
+                    <p>Registered Users</p>
+
+                </div>
+
+                <div class="col-6 col-sm-6 col-md-3">
+                    <i class="icofont icofont-5x icofont-text-height"></i>
+                    <h2><span class="counter">32</span> <span>+</span></h2>
+                    <p>Brands</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock content %}
