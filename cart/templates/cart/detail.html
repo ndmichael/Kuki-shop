@@ -42,8 +42,13 @@
             <h3>Total Cost: {{ cart.get_total_price }} </h3>
             <h4>shipping cost: </h4>
             <p class="text-center">
-                <a href="{% url "orders:order_create" %}" ><button class="btn btn-info btn-block">Checkout</button></a> <br />
-                <button class="btn btn-outline-light btn-block"><a href="{% url "shop:product_list" %}">Continue Shopping</a></button>
+                <a href="{% url "orders:order_create" %}" class="btn btn-info btn-block" >
+                    Checkout</button>
+                </a> 
+                <hr />
+                <a href="{% url "shop:product_list" %}" class="btn btn-outline-dark btn-block">
+                    Continue Shopping
+                </a>
             </p>
         </div>
     </div> <!-- end of row -->
