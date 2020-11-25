@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 /* ----------- Footer Section css  --------------- */
+=======
+<<<<<<< Updated upstream
+/* ----------- Footer Section css  --------------- */
+=======
+/* -----------Footer css  --------------- */
+>>>>>>> Stashed changes
+>>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 
 #footer-section{
     background: #252525;
@@ -21,6 +29,13 @@
     text-decoration: none;
     color:  #f8f9fa;
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
+>>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 }
 
 #footer-section ul a:hover{
@@ -45,6 +60,10 @@
 	background-clip: text;
 	color: transparent;
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 }
 
 #footer-section .dev-details{
@@ -72,4 +91,9 @@
 
 #footer-section .developer:hover{
     filter: opacity(0.5);
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 }

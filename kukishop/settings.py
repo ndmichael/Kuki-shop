@@ -137,7 +137,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
+<<<<<<< HEAD
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+=======
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+>>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -150,6 +154,7 @@ CART_SESSION_ID = 'cart'
 
 
 # setting environmental variables for S3
+<<<<<<< HEAD
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') 
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME2')
@@ -160,6 +165,19 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_DEFAULT_UCL = None
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+=======
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
+AWS_STORAGE_BUCKET_NAME = ""
+
+AWS_S3_FILE_OVERWRITE = False
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_DEFAULT_UCL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+>>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 
 # Braintree settings
 BRAINTREE_MERCHANT_ID = '6jymvn97hxkwmwkk', # Merchant ID
@@ -171,4 +189,8 @@ Environment.Sandbox,
     '6jymvn97hxkwmwkk',
     'np7yrdnkhz8h7dj2',
     'f8a14f52b496e4465cfb2e1684a075ec'
+<<<<<<< HEAD
 )
+=======
+)
+>>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd

@@ -1,0 +1,323 @@
+/* cart nav css */
+
+@import url('https://fonts.googleapis.com/css2? \
+	family=EB+Garamond&family=Oswald:wght@700& \
+	family=Roboto+Slab:wght@100&\
+	family=Ubuntu:wght@700&\
+	family=Roboto+Condensed:wght@700&\
+	family=Ubuntu+Condensed&\
+	family=Berkshire+Swash&display=swap');
+
+/*font-family: 'EB Garamond', serif;*/
+/*font-family: 'Oswald', sans-serif;*/
+/*font-family: 'Quicksand', sans-serif;*/
+/*font-family: 'Roboto Slab', serif;*/
+/*font-family: 'Ubuntu', sans-serif;*/
+/*font-family: 'Raleway', sans-serif;*/
+
+
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background-color: #f8f9fa;
+}
+
+/* primary button override */
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(#00dcff , #004c5c);
+	transition: opacity .5s;
+	border: none !important;
+	outline: none !important;
+}
+
+.btn-primary:hover, .btn-primary:active{
+	opacity: 0.7;
+	outline: none !important;
+}
+
+
+
+h1, h2, h3{
+	font-family: 'Roboto Condensed', sans-serif;
+	/*font-family: 'Berkshire Swash', sans-serif;*/
+	/*text-transform: uppercase;*/
+	color: #004c5c;
+}
+
+p{
+	/*font-family: 'courier new', sans-serif;*/
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-weight: 300;
+	color: #495057;
+	font-size: 1.1em;
+	letter-spacing: 1px;
+}
+
+
+/***** The css section to style the navbar *****/
+.navbar-expand-lg{
+	/*background-color: #005f69;*/
+	background-color: #004c5c;
+	text-decoration: none;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100 !important;
+}
+
+.navbar-dark .navbar-brand{
+	font-weight: 900;
+	color: #33a1c9;
+}
+
+.icofont-ui-cart{
+	color: #ffffff;
+}
+
+.icofont-ui-cart:hover{
+	color: #33a1c9;
+}
+
+.navbar-expand-lg a{
+	text-decoration: none;
+	color: #004c5c;
+}
+
+
+/***** The css style for the badge *****/
+ul .badge {
+	/* color: #2F92CA; */
+	color: #004c5c;
+	background-color: #FFF;
+	font-size: 1em;
+	/*padding: 0.27rem 0.55rem 0.2rem 0.4rem;*/
+	position: relative;
+	right: 1.2rem;
+	bottom: 1.1rem;
+	z-index: 99;
+	border: 0.1rem solid #33a1c9;
+    border-radius: 999px;
+}
+
+/***** The css style the landing page banner  *****/
+#landing-page{
+	height: 95vh;
+	/*background-image: linear-gradient(rgba(0, 92, 151,  0.9), rgba(54, 55, 149,  0.9)), url("/static/shop/image/model3.jpg");*/
+	background-image: linear-gradient(rgba(8, 8, 8,  0.8) 100%, rgba(8, 8, 8,  0.8) 100%), url("/static/shop/image/model3.jpg");
+	background-size: cover;
+}
+
+.landing-page-details{
+	margin: 27vh auto;
+}
+
+#landing-page h1{
+	font-weight: bolder;
+	font-size: 3.2em;
+	text-transform: capitalize;
+}
+
+#landing-page p{
+	color: #FFFFFF;;
+}
+
+
+
+/***** The css style for shop services and goals *****/
+#shop-goals{
+	padding:4em;
+	background-color: #4ab3c34f;
+	text-align: left;
+
+}
+
+.goals-items {
+	/*padding: 0 20px;*/
+	background-color: #FFFFFF;
+
+}
+
+.shadow-type1:before {
+	content: '';
+	position: absolute;
+	bottom: 10px;
+	left: 10%;
+	width: 90%;
+	height: 50px;
+	background: rgba(0,0,0,0.4);
+	transform-origin: left;
+	transform: skewY(4deg);
+	z-index: -3;
+	filter: blur(5px);
+	
+}
+
+.shadow-type2{
+	background-color: #4ab3c34f;
+	box-shadow:	 -10px -10px 15px rgba(255, 255, 255, 0.2), 10px 10px 15px rgba(0, 0, 0, 0.1),
+				inset -5px -5px 5px rgba(255, 255, 255, 0.3), inset 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#shop-goals .icofont{
+	background: -moz-linear-gradient(#00dcff , #004c5c);
+	background: -webkit-linear-gradient(#00dcff , #004c5c);
+	background: linear-gradient(#00dcff , #004c5c);
+	padding: 10px;
+	border-radius: 40%;
+	color: #fff;
+}
+
+
+#s-model{
+	background-image: url("/static/shop/image/model1.jpg");
+	background-size: cover;
+	padding: 0 20px;
+	width: 100%;
+	height: 100%;
+	box-shadow: 5px 5px 7px grey;
+}
+
+
+/***** The css style rules for the shop categories and collections *****/
+section#shop-collections{
+	padding: 4.5em 2em;
+	/*margin: 2em 0em auto;*/
+	background: rgba(255, 255, 255, 0.6);
+	text-align: left;
+
+}
+
+section#shop-collections .category-wrapper:hover .text-pin{
+	filter: opacity(0.7);
+	
+}
+
+section#shop-collections .category-wrapper:hover .collection-photos{
+	transform: translate(0px, -15px);
+	padding: 0 !important;
+
+}
+
+section#shop-collections .category-wrapper:hover{
+	box-shadow: 2px 2px 7px grey;
+}
+
+section#shop-collections a{
+	text-decoration: none;
+}
+
+.text-pin{
+	color: #000;
+	background-color: rgba(255, 255, 255, 1);
+	-webkit-transform: translate(-2px,-68px);
+	transform: translate(-2px,-68px);
+	padding: 5px;
+	display: inline-block;
+
+}
+
+.text-pin:hover{
+	color: #004c5c;
+}
+
+.collection-photos{
+	max-height: 230px;
+	border-radius: 20px;
+	transform: translate(0px, -30px);
+	transition: transform 300ms;
+}
+
+section#shop-collections .category-wrapper{
+	margin-top: 4em;
+	padding:  0px 1em 0px ;
+	background-color: #FFFFFF;
+	border-radius: 20px;
+	box-shadow: 2px 2px 7px rgba(80,80, 80, 0.3);
+
+}
+
+
+
+/***** The css style for the testimonial section *****/
+#testimonial-section {
+    padding: 3em 20px 7em;
+	background-color: #36b0c3;
+}
+
+#testimonial-section p strong{
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+
+}
+#testimonial-section p {
+	color: black;
+	margin: 20px 0;
+
+}
+
+#testimonial-section h3{
+	line-height: 0;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	margin-bottom: 2em;
+	color: black;
+}
+
+
+.carousel-control-next, .carousel-control-prev{
+	top: 12em;
+	padding: 10px;
+}
+
+#smiling-customer{
+	color: #004c5c !important;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	z-index: 1000;
+	position: relative;
+	top: -85px;
+	margin-bottom: -20em;
+	border: 10px solid #ffffff;
+	border-radius: 999px;
+	background-color: #f8f9fa;
+	/*background: linear-gradient(#667eea , #764ba2)*/
+}
+
+/***** The css style for the statistic section *****/
+#stats-section {
+    padding: 7em 20px;
+	text-align: center;
+	/*background: black;*/
+}
+
+#stats-section p{
+	font-weight: bolder;
+}
+
+#stats-section .icofont{
+	background: -moz-linear-gradient(#00dcff , #004c5c);
+	background: -webkit-linear-gradient(#00dcff , #004c5c);
+	background: linear-gradient(#00dcff , #004c5c);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	border-radius: 40%;
+	padding: 10px;
+	display: inline-block;
+}
+
+/************** Cart *****************/
+
+.cart-img {
+    max-height: 150px;
+    width: 100%;
+}
+
