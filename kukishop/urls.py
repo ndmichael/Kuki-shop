@@ -24,14 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
-<<<<<<< HEAD
     path('payment/', include('payment.urls', namespace='payment')),
-=======
-<<<<<<< Updated upstream
-    path('payment/', include('payment.urls', namespace='payment')),
-=======
->>>>>>> Stashed changes
->>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
     path('', include('shop.urls', namespace='shop')),
 
 ]
