@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-/* ----------- Footer Section css  --------------- */
-=======
-<<<<<<< Updated upstream
-/* ----------- Footer Section css  --------------- */
-=======
-/* -----------Footer css  --------------- */
->>>>>>> Stashed changes
->>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 
+/* ----------- Footer Section css  --------------- */
 #footer-section{
     background: #252525;
     padding: 3em 20px;
@@ -28,14 +20,6 @@
 #footer-section ul a{
     text-decoration: none;
     color:  #f8f9fa;
-
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
->>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 }
 
 #footer-section ul a:hover{
@@ -59,11 +43,6 @@
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
-
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
->>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 }
 
 #footer-section .dev-details{
@@ -91,9 +70,4 @@
 
 #footer-section .developer:hover{
     filter: opacity(0.5);
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Stashed changes
->>>>>>> 45d1c2c5132134716bfde52634ddfd089abfc7bd
 }
