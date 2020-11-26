@@ -18,7 +18,7 @@
                         <span class="typing-text" style="color:gold;"></span>
                     </p>
                     <h1>
-                        At Kuki-Textile Shop, What we Offer??
+                        Kuki-Textile Shop, Our Offer??
                     </h1>
                     <p>
                         We sell variety of highly quality textiles at cheap and affordable price.
@@ -28,9 +28,10 @@
                         Shop for your textiles today i.e Ankara, Laces, Lifaya, men yards...
                     </p>
                     <p>
-                        <a href="{% url "shop:product_list" %}" class="btn btn-lg btn-primary">
+                        <a href="{% url "shop:product_list" %}" class="btn  btn-primary mt-4" style="font-size: 26px;
+                        text-transform: uppercase; padding: 10px 45px; ">
                             Shop Now
-                        </a> <button class="btn btn-lg btn-outline-light">Know More</button>
+                        </a>
                     </p>
                 </div>
                 <div class="col-12 col-md-6">
@@ -114,17 +115,17 @@
                 <h2>Our Textile Categories</h2>
             <div class="row">
                 {% for c in categories %}
-                    <a href="{{ c.get_absolute_url }}">
+                    
                     <div class="col-6 col-sm-6 col-md-4 col-lg-4 ">
-
+                        <a href="{{ c.get_absolute_url }}">
                             <div class="category-wrapper">
-                                <img src="{{ c.cat_image.url }}" class="w-100 img-fluid collection-photos"
+                                <img src="{{ c.cat_image.url }}" class="w-100 h-100 img-fluid collection-photos"
                                      alt="{{ c.name }} "/>
-                                <h3><a class="text-pin" href="{{ c.get_absolute_url }}">{{ c.name }}  </a></h3>
+                                <h3 class="text-pin">{{ c.name }}</h3>
                             </div>
-
+                        </a>
                     </div>
-                    </a>
+                    
                 {% endfor %}
             </div>
         </section>

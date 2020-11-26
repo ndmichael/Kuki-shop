@@ -207,18 +207,21 @@ section#shop-collections{
 
 }
 
-section#shop-collections .category-wrapper:hover .text-pin{
+.category-wrapper:hover .text-pin{
 	filter: opacity(0.7);
+	text-decoration: underline;
 }
 
-section#shop-collections .category-wrapper:hover .collection-photos{
+.category-wrapper:hover .collection-photos{
 	transform: translate(0px, -15px);
 	padding: 0 !important;
 
 }
 
-section#shop-collections .category-wrapper:hover{
+.category-wrapper:hover{
 	box-shadow: 2px 2px 7px grey;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 section#shop-collections a{
@@ -255,6 +258,7 @@ section#shop-collections .category-wrapper{
 	box-shadow: 2px 2px 7px rgba(80,80, 80, 0.3);
 
 }
+
 
 /***** The css style for the testimonial section *****/
 
