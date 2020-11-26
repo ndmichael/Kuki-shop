@@ -2,5 +2,5 @@
 #  *.js linguist-detectable=true
 #  *.html linguist-detectable=false
 #  *.css linguist-detectable=false
-*linguist-vendored
-*.* linguist-language=python
+#*linguist-vendored
+#*.* linguist-language=python
