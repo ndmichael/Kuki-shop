@@ -5,23 +5,25 @@
 {% block content %}
 
 <section class="container">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-md-8">
             {% for item in cart %}
             {% with product=item.product %}
-            <div class="row mb-3 border-bottom p-2 bg-light" >
-                <div class="col-12 col-sm-12 col-md-4">
+            <div class="row m-2 border-bottom p-2 bg-white" >
+                <div class="col-12 col-sm-12 col-md-3">
                     <img src="{{ product.image.url }}" class="img-thumbnail img-fluid cart-img" /> 
                                         
                 </div>
 
-                 <div class="col-12 col-md-4">
+                 <div class="col-12 col-md-6">
                      <h6>{{ product.category }}</h6>
                      <h4>{{ product.name }}</h4>
+
                     <a href="{% url "cart:cart_remove" product.id %}" class="btn btn-outline-danger btn-sm">
                         <i class="icofont icofont-delete-alt pr-2"></i>
                          Remove
                     </a> 
+
                     <form class="form-group pl-2" action="{% url "cart:cart_add" product.id %}"  method="post" style="display: inline-block;">
                         {{ item.update_quantity_form.quantity }}
                         {{ item.update_quantity_form.update }}
@@ -30,8 +32,8 @@
                     </form>
                 </div>
 
-                <div class="col-12 col-md-4" style="text-align: right">
-                    <strong class="pr-2 border-bottom">Unit Price:</strong>
+                <div class="col-12 col-md-3" style="text-align: right">
+                    <b class="pr-2 border-bottom">Unit Price:</b>
                     <p>{{ item.price }}</p>
                     <b class="pr-2 border-bottom">Total Price</b>
                     <p>&#x20A6;{{ item.total_price }}</p>
