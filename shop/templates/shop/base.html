@@ -139,6 +139,7 @@
 
     <script src="{% static 'shop/js/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
+    
     <script>
         $(document).ready(function () {
             $('.productValue').click(function (event) {
@@ -156,9 +157,9 @@
                         'action': 'post'
                     },
                     success: function (response) {
-                        
+
                         if (response['result']) {
-                            $('#'+cart_id).html(response['cart_total']);
+                            $('#' + cart_id).html(response['cart_total']);
                             console.log(cart_id)
                         }
                         console.log("success");
@@ -170,7 +171,6 @@
             })
         })
     </script>
-
 
     <script>
         $(document).ready(($) => {
