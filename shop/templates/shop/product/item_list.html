@@ -32,12 +32,16 @@
                                         <h5><a href="{{ product.get_absolute_url }}" >{{ product.name }}</a> </h5>
                                         <p>{{ product.size }} <span class="float-right">&#x20A6; {{ product.price }}</span></p>
                                         <div class="faded-details">
-                                            <form action="{% url "cart:cart_add" product.id %}" method="post">
+                                            <!-- <form action="{% url "cart:cart_add" product.id %}" method="post"> 
                                                 {{ cart_product_form }}
-                                                {% csrf_token %}
-                                                <input type="submit" class="btn btn-block btn-primary" value="Add to cart">
-                                            </form>
-                                            <!-- <button class="btn btn-block btn-primary"><a href="#" >Add to Cart</a></button> -->
+                                                 {% csrf_token %}
+                                                <input type="submit" data-product="{{product.pk}}" data-action="add"
+                                                class="btn btn-block btn-primary update-cart" value="Add to cart">
+                                            </form> -->
+                                            <button class="btn btn-block btn-primary productValue" 
+                                            id="product-{{product.id}}" value="{{product.id}}">
+                                                Add to Cart
+                                            </button> 
                                         </div>
 
                                     </div>
