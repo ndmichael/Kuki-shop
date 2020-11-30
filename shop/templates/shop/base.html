@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{% static 'shop/css/footerCss.css' %}" />
     <link rel="stylesheet" href="{% static 'shop/css/productCss.css' %}" />
 
+    <script>
+        var user = '{{request.user}}';
+    </script>
+
 
 </head>
 
@@ -165,7 +169,7 @@
                     success: function (response) {
                         if (response['result']) {
                             $('.cart_count').text(response['cart_total']);
-                            console.log(cart_id)
+                            console.log(user);
                         }
                         console.log("success");
                     },

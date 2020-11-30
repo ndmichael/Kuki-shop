@@ -10,8 +10,8 @@
                     <h3> <a href="{% url "shop:product_list" %}">Textile Shop</a></h3>
                     <ul class="" >
                         {% for c in categories %}
-                            <li {% if category.slug == c.slug %}class="active list-group-item" 
-                            {% else %}class="list-group-item"{% endif %} style="float: left;">
+                            <li {% if category.slug == c.slug %}class="active" 
+                            {% endif %}>
                                 <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
                             </li>
                             <hr>
