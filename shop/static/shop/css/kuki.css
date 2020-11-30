@@ -104,20 +104,21 @@ ul .badge {
 
 
 #landing-page{
-	height: 95vh;
+	height: 85vh;
 	/*background-image: linear-gradient(rgba(0, 92, 151,  0.9), rgba(54, 55, 149,  0.9)), url("/static/shop/image/model3.jpg");*/
 	background-image: linear-gradient(rgba(8, 8, 8,  0.8) 100%, rgba(8, 8, 8,  0.8) 100%), url("/static/shop/image/model3.jpg");
 	background-size: cover;
 }
 
 .landing-page-details{
-	margin: 27vh auto;
+	margin: 23vh auto;
 }
 
 #landing-page h1{
 	font-weight: bolder;
-	font-size: 3.2em;
-	text-transform: capitalize;
+	font-size: 3em;
+	text-transform: uppercase;
+	color: #ffffff;
 }
 
 #landing-page p{
@@ -156,10 +157,10 @@ ul .badge {
 
 }
 
-.shadow-type1 {
-	background-color: #f8f9fa;
+/* .shadow-type1 {
+	background-color: #f9f9ff !important;
 	padding: 10px;
-}
+} */
 
 
 /* .shadow-type1:before {
@@ -178,9 +179,9 @@ ul .badge {
 } */
 
 #shop-goals .icofont{
-	background: -moz-linear-gradient(#00dcff , #004c5c);
-    background: -webkit-linear-gradient(#00dcff , #004c5c);
-    background: linear-gradient(#00dcff , #004c5c);
+	background: -moz-linear-gradient(orange , orangered);
+    background: -webkit-linear-gradient(orange , orangered);
+    background: linear-gradient(orange , orangered);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -202,7 +203,7 @@ ul .badge {
 section#shop-collections{
 	padding: 4.5em 2em;
 	/*margin: 2em 0em auto;*/
-	background: rgba(255, 255, 255, 0.6);
+	background: #f9f9ff !important;
 	text-align: left;
 
 }
@@ -377,9 +378,4 @@ section#shop-collections .category-wrapper{
 	width: 100%;
 }
 
-#footer-section .dev-details {
-	text-align: center;
-	text-transform: capitalize;
-
-}
 

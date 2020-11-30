@@ -20,9 +20,14 @@
 	margin-bottom: 10em;
 }
 
+#product-listing .active {
+	color: #ffffff;
+}
+
 #product-listing a {
 	text-decoration: none;
-	color: #004c5c;
+	color: none;
+
 }
 
 #product-listing a:hover {
@@ -58,16 +63,15 @@
 
 .product-wrapper:hover .product-details{
 	cursor: pointer;
-	bottom: 0px;
+	transform: translateY(0px);
 	
 }
 
 .product-wrapper .product-details{
-	position: relative;
-	bottom: -90px;
+	transform: translateY(110px);
 	z-index: 2;
 	background: #ffffff;
-	transition: bottom 0.65s;
+	transition: transform 0.65s;
 	padding: 20px;
 }
 

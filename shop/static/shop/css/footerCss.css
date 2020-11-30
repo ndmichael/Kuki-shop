@@ -2,7 +2,7 @@
 /* ----------- Footer Section css  --------------- */
 #footer-section{
     background: #252525;
-    padding: 3em 20px;
+    padding: 3em 0 0 0;
     color: white;
 }
 
@@ -70,4 +70,10 @@
 
 #footer-section .developer:hover{
     filter: opacity(0.5);
+}
+
+#footer-section .dev-details {
+	text-align: center;
+	text-transform: capitalize;
+
 }
