@@ -5,17 +5,16 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-8">
-                <form class="form-group" method="post">
+            <div class="col-12 col-md-7">
+                <form class="form-group my-4" method="post">
                     {% csrf_token %}
                     <fieldset>
-                        <legend class="border-bottom mb-4">Complete Order</legend>
-                        {{form|crispy}}
+                        <legend class="border-bottom mb-4"><b>Complete Order</b></legend>
+                        {% crispy form %}
                     </fieldset>
-                    <button type="submit" class="btn btn-lg btn-primary">submit order</button>
                 </form>
-
             </div>
+
             <div class="col-12 col-md-4">
 
             </div>
