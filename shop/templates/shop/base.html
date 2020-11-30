@@ -27,7 +27,6 @@
                     {% with total_items=cart|length %}
                     {% if cart|length > 0 %}
                     <a href="{% url "cart:cart_detail" %}">
-
                         <span class="icofont icofont-2x icofont-ui-cart">
                         </span>
                         <span id="cart_count" class="badge cart_count">{{ total_items }}</span>
@@ -64,12 +63,6 @@
                             {% for c in categories %}
                             <a class="dropdown-item" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
                             {% endfor %}
-                            {#                            <a class="dropdown-item" href="{% url "get" %}">Ankara</a>#}
-                            {#                            <a class="dropdown-item" href="#">Laces</a>#}
-                            {#                            <a class="dropdown-item" href="#">Lifaya</a>#}
-                            {#                            <a class="dropdown-item" href="#">Men's Yard</a>#}
-                            {#                            <a class="dropdown-item" href="#">Shadda</a>#}
-                            {#                            <a class="dropdown-item" href="#">Viels</a>#}
                         </div>
                     </li>
                 </ul>
@@ -93,7 +86,7 @@
                 </li>
             </ul>
 
-           
+
         </div>
     </nav>
 
@@ -103,9 +96,8 @@
 
 
     <section id="footer-section">
-        <footer class="container">
+        <footer class="container py-3">
             <div class="row">
-
                 <div class="col-6 col-md-5">
                     <h3>Kuki Textile Shop</h3>
                     <ul>
@@ -140,13 +132,13 @@
                     <p>&copy; copyright, developed 2020, all right reserved</p>
                     <i class="icofont icofont-3x icofont-arrow-up" id="topBtn" onclick="topFunction()" title="to top">
                     </i>
-
                 </div>
-            </div>
-            <div class="row dev-details pt-3">
-                <div class="col-md-12">
-                    <p>This site was built on Django, Javascript and Bootstrap. <br /><a class="developer"
-                            href="www.codeja-vu.dx.am" target="_blank">See Developer</a></p>
+                <div class="col-md-12 dev-details">
+                    <p>This site was built on Django, Javascript and Bootstrap. <br />
+                        <a class="developer" href="www.codeja-vu.dx.am" target="_blank">
+                            See Developer
+                        </a>
+                    </p>
                     <p>Terms | Condition</p>
                 </div>
             </div>
@@ -161,8 +153,6 @@
             $('.productValue').click(function (event) {
                 event.preventDefault();
                 var productId = $(this).attr('id');
-                var cart_id = $('.cart_count').attr('id');
-                console.log(productId);
 
                 $.ajax({
                     url: '{% url "cart:cart_add_with_ajax" %}',
@@ -173,9 +163,8 @@
                         'action': 'post'
                     },
                     success: function (response) {
-
                         if (response['result']) {
-                            $('#' + cart_id).html(response['cart_total']);
+                            $('.cart_count').text(response['cart_total']);
                             console.log(cart_id)
                         }
                         console.log("success");
