@@ -5,7 +5,7 @@
 {% block content %}
 
 <section class="container">
-    <div class="row mt-3">
+    <div class="row my-5">
         <div class="col-md-8">
             {% for item in cart %}
             {% with product=item.product %}
@@ -19,17 +19,19 @@
                      <h6>{{ product.category }}</h6>
                      <h4>{{ product.name }}</h4>
 
-                    <a href="{% url "cart:cart_remove" product.id %}" class="btn btn-outline-danger btn-sm">
-                        <i class="icofont icofont-delete-alt pr-2"></i>
-                         Remove
-                    </a> 
-
-                    <form class="form-group pl-2" action="{% url "cart:cart_add" product.id %}"  method="post" style="display: inline-block;">
-                        {{ item.update_quantity_form.quantity }}
-                        {{ item.update_quantity_form.update }}
-                        <input id="product{{product.id}}" data-id="{{product.id}}" class="btn btn-primary btn-sm update_cart" type="submit" value="Update">
-                        {% csrf_token %}
-                    </form>
+                    <div class="py-2">
+                        <a href="{% url "cart:cart_remove" product.id %}" class="btn btn-outline-danger btn-sm">
+                            <i class="icofont icofont-delete-alt pr-2"></i>
+                             Remove
+                        </a> 
+    
+                        <form class="form-group pl-2" action="{% url "cart:cart_add" product.id %}"  method="post" style="display: inline-block;">
+                            {{ item.update_quantity_form.quantity }}
+                            {{ item.update_quantity_form.update }}
+                            <input id="product{{product.id}}" data-id="{{product.id}}" class="btn btn-primary btn-sm update_cart" type="submit" value="Update">
+                            {% csrf_token %}
+                        </form>
+                    </div>
                 </div>
 
                 <div class="col-12 col-md-3" style="text-align: right">
@@ -46,9 +48,22 @@
         </div>
 
         <div class="col-md-4">
-            <h3>Total Cost: {{ cart.get_total_price }} </h3>
-            <h4>shipping cost: </h4>
-            <p class="text-center">
+            <h1 class="border-bottom pb-2 mb-4">Summary</h1>
+            <table class="w-100 mb-4 p-4 table table-striped table-hover">
+                <tr>
+                    <td> Total Cost: </td>
+                    <td class="float-right"> &#x20A6; {{ cart.get_total_price }}</td>
+                </tr>
+                <tr>
+                    <td> Shipping fee: </td>
+                    <td class="float-right"> Nil </td>
+                </tr>
+                <tr>
+                    <td> Estimated Total: </td>
+                    <td class="float-right"> &#x20A6; {{ cart.get_total_price }} </td>
+                </tr>
+            </table>
+            <div class="text-center">
                 <a href="{% url "orders:order_create" %}" class="btn btn-info btn-block" >
                     Checkout</button>
                 </a> 
@@ -56,7 +71,8 @@
                 <a href="{% url "shop:product_list" %}" class="btn btn-outline-dark btn-block">
                     Continue Shopping
                 </a>
-            </p>
+                <small class="float-left p-2"><Q>Do you have any Questions?</Q> <a href="href">Contact Us</a></small>
+            </div>
         </div>
     </div> <!-- end of row -->
 </section>
