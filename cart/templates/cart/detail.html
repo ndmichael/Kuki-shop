@@ -11,8 +11,7 @@
             {% with product=item.product %}
             <div class="row m-2 border-bottom p-2 bg-white" >
                 <div class="col-12 col-sm-12 col-md-3">
-                    <img src="{{ product.image.url }}" class="img-thumbnail img-fluid cart-img" /> 
-                                        
+                    <img src="{{ product.image.url }}" class="img-thumbnail img-fluid cart-img" />                        
                 </div>
 
                  <div class="col-12 col-md-6">
@@ -34,10 +33,9 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-3" style="text-align: right">
-                    <b class="pr-2 border-bottom">Unit Price:</b>
-                    <p>{{ item.price }}</p>
-                    <b class="pr-2 border-bottom">Total Price</b>
+                <div class="col-12 col-md-3 text-right">
+                    <p>&#x20A6;{{ item.price }}</p>
+                    <b class="border-bottom">Accm Price</b>
                     <p>&#x20A6;{{ item.total_price }}</p>
                 </div>
 
@@ -63,6 +61,7 @@
                     <td class="float-right"> &#x20A6; {{ cart.get_total_price }} </td>
                 </tr>
             </table>
+
             <div class="text-center">
                 <a href="{% url "orders:order_create" %}" class="btn btn-info btn-block" >
                     Checkout</button>
