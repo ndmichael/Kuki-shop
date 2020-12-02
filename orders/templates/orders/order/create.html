@@ -3,22 +3,54 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-7">
-                <form class="form-group my-5 p-3" method="post">
-                    {% csrf_token %}
-                    <fieldset>
-                        <legend class="border-bottom mb-4"><b>Complete Order</b></legend>
-                        {% crispy form %}
-                    </fieldset>
-                </form>
-            </div>
-
-            <div class="col-12 col-md-4">
-
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-7">
+            <form class="form-group my-5 p-3" method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="border-bottom mb-4"><b>Complete Order</b></legend>
+                    {% crispy form %}
+                </fieldset>
+            </form>
         </div>
 
+        <div class="col-12 col-md-4 bg-white rounded py-4 px-3 my-3" style="box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.5);">
+            <h1 class="pb-2 mb-4">Order Summary</h1>
+            <hr />
+            <div>
+                <a href="{% url "cart:cart_detail" %}" class="btn btn-outline-dark btn-md btn-block">
+                    Back to Cart
+                </a>
+                <small class="float-left p-2"><Q>Do you have any Questions?</Q> <a href="href">Contact Us</a></small>
+            </div>
+            <table class="w-100 mb-4 p-4 table table-striped table-hover">
+                <tr>
+                    <td> Items: </td>
+                    <td class="float-right"> {{ cart|length  }} </td>
+                </tr>
+                <tr>
+                    <td>Total Cost: </td>
+                    <td class="float-right"> &#x20A6; {{ cart.get_total_price }} </td>
+                </tr>  
+            </table>
+
+            <table class=" table table-border" style="box-shadow: 0 5px 7px -3px rgba(0, 0, 0, 0.3);">
+                {% for item in cart %}
+                    {% with product=item.product %}
+                    <tr>
+                        <td><img src="{{ product.image.url }}" class="img-fluid cart-img" style="width: 50px; height: 50px;" /></td>
+                        <td> {{ product.name  }} </td>
+                        <td> &times;{{item.quantity}}</td>
+                    </tr>
+                    {% endwith %}
+                {% endfor %}
+            </table>
+
+            
+        </div>
     </div>
+</div>
+
+</div>
 {% endblock content %}
