@@ -26,15 +26,17 @@ SECRET_KEY = 'd^hd%e*k937l-j8^pu@4ogx09@n=u^7gsj5=&%%)9e3rfr)ip-'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+SITE_ID = 1
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'shop.apps.ShopConfig',
+    'customer.apps.CustomerConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'shop.apps.ShopConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,7 +44,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # allauth
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
+    # 'allauth.socialaccount.providers.google', 
+    # 'allauth.socialaccount.providers.facebook', 
+
     'storages',
+    
 
 ]
 
@@ -160,6 +172,26 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_DEFAULT_UCL = None
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+#django-allauth registraion settings 
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "account_login"
+
+# 1 day 
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
+
+ACCOUNT_FORMS = {'signup': 'customer.forms.MyCustomSignupForm'}
+LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = '/'
+
+
 
 # Braintree settings
 BRAINTREE_MERCHANT_ID = '6jymvn97hxkwmwkk', # Merchant ID
