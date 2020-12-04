@@ -31,7 +31,6 @@ def product_list(request, category_slug=None):
         'title': 'textiles',
         'cart_product_form': cart_product_form
     }
-
     return render(request, 'shop/product/item_list.html', context)
 
 
