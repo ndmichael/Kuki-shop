@@ -13,10 +13,10 @@
 
 {% get_providers as socialaccount_providers %}
 
-<div class="container">
+<div class="container my-5">
   <div class="row">
     <div class="offset-md-2 col-12 col-md-4">
-      <div class="form-override">
+      <div class="auth_css">
         <h1>{% trans "Login" %}</h1>
         <br />
         <form class="login" method="POST" action="{% url 'account_login' %}">
