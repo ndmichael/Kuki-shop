@@ -18,11 +18,6 @@ class MyCustomSignupForm(SignupForm):
         user.last_name = self.cleaned_data['last_name']
         user.save() 
         return user
-    
-    def save(self, request):
-
-        self.cleaned_data.pop('first_name')
-
 
     def __init__(self, *args, **kwargs):
         
