@@ -17,13 +17,12 @@ import weasyprint
 def order_create(request):
     cart = Cart(request)
     if request.method == 'POST':
-        form = OrderForm(request.POST)
+        form = OrderForm(request.POST, instance=request.user)
         if form.is_valid():
             order = form.save()
             # Iterate over each items and create an orderItem for each item
             for item in cart:
                 OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
-
 
             # afterward successful order clear cart
             cart.clear()
@@ -41,7 +40,7 @@ def order_create(request):
 
 
     else:
-        form = OrderForm
+        form = OrderForm (instance=request.user)
     return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
 
 

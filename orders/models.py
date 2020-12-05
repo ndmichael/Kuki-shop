@@ -1,9 +1,11 @@
 from django.db import models
 from shop.models import Product
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class Order(models.Model):
+    customer = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField()
@@ -22,7 +24,7 @@ class Order(models.Model):
         ordering = ('-created',)
 
     def __str__(self):
-        return 'Order {}'.format(self.id)
+        return 'Order {}'.format(self.address)
 
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
