@@ -37,8 +37,11 @@
                         <span id="cart_count" class="badge cart_count">{{ total_items }}</span>
                     </a>
                     {% else %}
-                    <i class="icofont icofont-2x icofont-ui-cart"></i>
-                    <span id="cart_count" class="badge cart_count">0</span>
+                    <a href="{% url "cart:cart_detail" %}">
+                        <span class="icofont icofont-2x icofont-ui-cart"></span>
+                        <span id="cart_count" class="badge cart_count">0</span>
+                    </a>
+                    
                     {% endif %}
                     {% endwith %}
                 </li>
@@ -84,8 +87,10 @@
                         <span id="cart_count" class="badge cart_count">{{ total_items }}</span>
                     </a>
                     {% else %}
-                    <i class="icofont icofont-2x icofont-ui-cart"></i>
-                    <span id="cart_count" class="badge cart_count">0</span>
+                    <a href="{% url "cart:cart_detail" %}">
+                        <span class="icofont icofont-2x icofont-ui-cart"></span>
+                        <span id="cart_count" class="badge cart_count">0</span>
+                    </a>
                     {% endif %}
                     {% endwith %}
                 </li>
