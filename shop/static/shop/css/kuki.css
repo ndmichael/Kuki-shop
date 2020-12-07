@@ -217,7 +217,7 @@ section#shop-collections{
 .category-wrapper:hover .collection-photos{
 	transform: translate(0px, -15px);
 	padding: 0 !important;
-	filter: invert(0.2) hue-rotate(90deg);
+	/* filter: invert(0.2) hue-rotate(90deg); */
 
 }
 
