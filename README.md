@@ -3,6 +3,8 @@
 An E-Commerce site for a medium size business, built using Python/Django, Bootstrap and React. still under development
 customers to shop for textile materials as guest or as registered users.
 
+![Screenshot_2020-12-07 Kuki-Textiles-textiles](https://user-images.githubusercontent.com/10378288/101413459-9ba65400-38e4-11eb-9985-f7c42d0b03bd.jpg)
+
 ## Key Features
 
 * checkout form
