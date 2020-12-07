@@ -7,8 +7,10 @@
 <section class="container">
     <div class="row my-5">
         <div class="col-md-8">
-            {% for item in cart %}
+            {% if cart %}
+            {% for item in cart %}           
             {% with product=item.product %}
+
             <div class="row m-2 border-bottom p-2 bg-white" >
                 <div class="col-12 col-sm-12 col-md-3">
                     <img src="{{ product.image.url }}" class="img-thumbnail img-fluid cart-img" />                        
@@ -38,14 +40,29 @@
                     <b class="border-bottom">Accm Price</b>
                     <p>&#x20A6;{{ item.total_price }}</p>
                 </div>
-
             </div>
+
             {% endwith %}
             {% endfor %}
+            {% else %}
+                <div class="row my-5 text-center">
+                    <div class=" col-12">
+                        <span class=" icofont icofont-10x icofont-cart-alt">   
+                        </span>
+                        <h3> Cart Empty, Shop with us. 
+                            <a href="{% url "shop:product_list" %}" class="btn btn-primary">
+                                Shop Now
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            {% endif %}
 
         </div>
 
         <div class="col-md-4">
+            {% if cart %}
+
             <h1 class="border-bottom pb-2 mb-4">Summary</h1>
             <table class="w-100 mb-4 p-4 table table-striped table-hover">
                 <tr>
@@ -72,6 +89,8 @@
                 </a>
                 <small class="float-left p-2"><Q>Do you have any Questions?</Q> <a href="href">Contact Us</a></small>
             </div>
+
+            {% endif %}
         </div>
     </div> <!-- end of row -->
 </section>
