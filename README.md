@@ -3,7 +3,7 @@
 An E-Commerce site for a medium size business, built using Python/Django, Bootstrap and React. still under development
 customers to shop for textile materials as guest or as registered users.
 
-![Screenshot_2020-12-07 Kuki-Textiles-textiles](https://user-images.githubusercontent.com/10378288/101413459-9ba65400-38e4-11eb-9985-f7c42d0b03bd.jpg)
+![screenshot_2020-12-07-kuki-tex](https://user-images.githubusercontent.com/10378288/101414713-e759fd00-38e6-11eb-8482-51ef2104f0db.jpg)
 
 ## Key Features
 
@@ -13,6 +13,8 @@ customers to shop for textile materials as guest or as registered users.
 * async task spooling
 * textile categories
 * shop as a guest without registration
+
+![Screenshot_2020-12-03 Kuki-Textiles](https://user-images.githubusercontent.com/10378288/101415017-736c2480-38e7-11eb-952a-aa1f747895e3.png)
 
 ## Technology stack
 
