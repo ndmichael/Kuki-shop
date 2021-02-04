@@ -4,16 +4,8 @@
 	family=EB+Garamond&family=Oswald:wght@700& \
 	family=Roboto+Slab:wght@100&\
 	family=Ubuntu:wght@700&\
-	family=Roboto+Condensed:wght@700&\
-	family=Ubuntu+Condensed&\
 	family=Berkshire+Swash&display=swap');
 
-/*font-family: 'EB Garamond', serif;*/
-/*font-family: 'Oswald', sans-serif;*/
-/*font-family: 'Quicksand', sans-serif;*/
-/*font-family: 'Roboto Slab', serif;*/
-/*font-family: 'Ubuntu', sans-serif;*/
-/*font-family: 'Raleway', sans-serif;*/
 
 
 
@@ -41,18 +33,21 @@ body{
 }
 
 h1, h2, h3{
-	font-family: 'Roboto Condensed', sans-serif;
-	/*font-family: 'Berkshire Swash', sans-serif;*/
-	/*text-transform: uppercase;*/
+	font-family: 'MUNICH SANS';
+	letter-spacing: 2px;
+	font-weight: 900;
 	color: #004c5c;
 }
 
+h4, h5, h6 {
+	font-family: 'Raleway', sans-serif;
+}
+
 p{
-	/*font-family: 'courier new', sans-serif;*/
-	font-family: 'Ubuntu Condensed', sans-serif;
-	font-weight: 300;
+	/* font-family: 'Ubuntu Condensed', sans-serif; */
+	font-family: 'Raleway', sans-serif;
 	color: #495057;
-	font-size: 1.1em;
+	font-size: 0.95em;
 	letter-spacing: 1px;
 }
 
@@ -116,13 +111,15 @@ ul .badge {
 
 #landing-page h1{
 	font-weight: bolder;
-	font-size: 3em;
+	font-size: 4em;
 	text-transform: uppercase;
 	color: #ffffff;
 }
 
 #landing-page p{
-	color: #FFFFFF;;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	font-size: 1em;
 }
 
 /***** The css style for shop services and goals *****/

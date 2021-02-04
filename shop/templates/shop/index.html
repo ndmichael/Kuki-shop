@@ -17,7 +17,7 @@
                     <p>
                         <span class="typing-text" style="color:orange;"></span>
                     </p>
-                    <h1>
+                    <h1 class="py-4">
                         Kuki-Textile Shop.
                     </h1>
                     <p>
@@ -26,7 +26,7 @@
                     </p>
                     <p>
                         <a href="{% url "shop:product_list" %}" class="btn  btn-primary mt-4" style="font-size: 26px;
-                        text-transform: uppercase; padding: 10px 45px; ">
+                        text-transform: uppercase; padding: 10px 35px; font-weight: 400; ">
                             Shop Now
                         </a>
                     </p>
@@ -117,7 +117,7 @@
                             <div class="category-wrapper">
                                 <img src="{{ c.cat_image.url }}" class="w-100 h-100 img-fluid collection-photos"
                                      alt="{{ c.name }} "/>
-                                <h3 class="text-pin">{{ c.name }}</h3>
+                                <h4 class="text-pin">{{ c.name }}</h4>
                             </div>
                         </a>
                     </div>                    

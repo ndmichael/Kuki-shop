@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'MUNICH SANS';
+    src: url('MUNICHSANS.eot');
+    src: local('MUNICH SANS'), local('MUNICHSANS'),
+        url('MUNICHSANS.eot?#iefix') format('embedded-opentype'),
+        url('MUNICHSANS.woff2') format('woff2'),
+        url('MUNICHSANS.woff') format('woff'),
+        url('MUNICHSANS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: 900;
+text-transform:capitalize;
+}
+
