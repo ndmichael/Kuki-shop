@@ -122,6 +122,45 @@ ul .badge {
 	font-size: 1em;
 }
 
+/***** Featured Images *****/
+
+.featured_product .ft-img {
+	height: 220px; 
+	width: 100%; 
+	object-fit: cover; 
+	object-position: center; 
+	filter: drop-shadow(0 3px 2px grey);
+	
+
+}
+
+.wrapper{
+	transition: 3000s;
+	overflow: hidden;
+	object-fit: cover; 
+	object-position: center; 
+	filter: drop-shadow(0 3px 2px grey);
+	
+}
+
+.wrapper:hover .ft-details {
+	display: block;
+	width: 100%;
+	transition: transform .7s;
+	transform: translate(0, -110px);
+}
+
+.featured_product  .ft-details {
+	width: 100%;
+	position: absolute;
+	top: 220px;
+	left: 0;
+	transition: transform .5s;
+	background: linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0.5));
+}
+
+
+
 /***** The css style for shop services and goals *****/
 
 .box{
@@ -179,7 +218,7 @@ ul .badge {
 
 /***** The css style rules for the shop categories and collections *****/
 
-section#shop-collections{
+section#shop-collections {
 	padding: 4.5em 2em;
 	/*margin: 2em 0em auto;*/
 	background: #f9f9ff !important;
@@ -187,12 +226,12 @@ section#shop-collections{
 
 }
 
-.category-wrapper:hover .text-pin{
+.category-wrapper:hover .text-pin {
 	filter: opacity(0.7);
 	text-decoration: underline;
 }
 
-.category-wrapper:hover .collection-photos{
+.category-wrapper:hover .collection-photos {
 	transform: translate(0px, -15px);
 	padding: 0 !important;
 	/* filter: invert(0.2) hue-rotate(90deg); */
@@ -228,6 +267,8 @@ section#shop-collections a{
 	border-radius: 20px;
 	transform: translate(0px, -30px);
 	transition: transform 300ms;
+	object-fit: cover;
+	object-position: top;
 
 }
 
