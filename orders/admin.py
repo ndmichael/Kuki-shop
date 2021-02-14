@@ -46,8 +46,8 @@ order_pdf.short_description = 'Invoice'
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'email', 'design', 'address', 'postal_code', 'city', 'paid',
+    list_display = ['id', 'design', 'address', 'postal_code', 'city', 'paid',
                     'created', 'updated', order_pdf]
     list_filter = ['paid', 'created', 'updated']
     inlines = [OrderItemInline]
-    actions = [export_to_csv]
+    actions = [export_to_csv] 

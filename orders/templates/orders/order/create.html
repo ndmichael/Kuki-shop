@@ -5,14 +5,37 @@
 {% block content %}
 <div class="container" style="min-height: 90vh;">
     <div class="row" style="position: relative; top: 7vh;">
-        <div class="col-12 col-md-7">
-            <form class="form-group my-5 p-3" method="post">
+
+        <div class="col-12 col-md-7 my-3">
+
+            {% if request.user.is_authenticated %}
+            <h1>Shopping as {{ request.user.first_name }}</h1>
+            {% else %}
+            <h1><small>Shopping as {{ request.user }}</small></h1>
+            {% endif %}
+            {% if cart|length > 0 %}
+            <form class="my-5 p-3" method="post">
                 {% csrf_token %}
                 <fieldset>
                     <legend class="border-bottom mb-4"><b>Complete Order</b></legend>
-                    {% crispy form %}
+                    {% if request.user.is_authenticated %}       
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
+                    {% else %}
+                        
+                    {{ c_form|crispy }}
+                    {{ form|crispy }}
+                        <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
+                    {% endif %}
                 </fieldset>
+                <!-- <button type="submit" class="btn btn-lg btn-primary">Complete Order</button> -->
+                
             </form>
+            {% else %}
+                <h1>
+                    Cart is Empty no orders to process
+                </h1>
+            {% endif %}
         </div>
 
         <div class="col-12 col-md-4 bg-white rounded py-4 px-3 my-3" style="box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.5);">
