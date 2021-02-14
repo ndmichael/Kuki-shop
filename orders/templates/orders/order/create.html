@@ -18,27 +18,28 @@
                 {% csrf_token %}
                 <fieldset>
                     <legend class="border-bottom mb-4"><b>Complete Order</b></legend>
-                    {% if request.user.is_authenticated %}       
-                        {{ form|crispy }}
-                        <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
+                    {% if request.user.is_authenticated %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
                     {% else %}
-                        
+
                     {{ c_form|crispy }}
                     {{ form|crispy }}
-                        <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
+                    <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
                     {% endif %}
                 </fieldset>
                 <!-- <button type="submit" class="btn btn-lg btn-primary">Complete Order</button> -->
-                
+
             </form>
             {% else %}
-                <h1>
-                    Cart is Empty no orders to process
-                </h1>
+            <h1>
+                Cart is Empty no orders to process
+            </h1>
             {% endif %}
         </div>
 
-        <div class="col-12 col-md-4 bg-white rounded py-4 px-3 my-3" style="box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.5);">
+        <div class="col-12 col-md-4 bg-white rounded py-4 px-3 my-3"
+            style="box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.5);">
             <h1 class="pb-2 mb-4">Order Summary</h1>
             <hr />
             <div>
@@ -55,22 +56,23 @@
                 <tr>
                     <td>Total Cost: </td>
                     <td class="float-right"> &#x20A6; {{ cart.get_total_price }} </td>
-                </tr>  
+                </tr>
             </table>
 
             <table class=" table table-border" style="box-shadow: 0 5px 7px -3px rgba(0, 0, 0, 0.3);">
                 {% for item in cart %}
-                    {% with product=item.product %}
-                    <tr>
-                        <td><img src="{{ product.image.url }}" class="img-fluid cart-img" style="width: 50px; height: 50px;" /></td>
-                        <td> {{ product.name  }} </td>
-                        <td> &times;{{item.quantity}}</td>
-                    </tr>
-                    {% endwith %}
+                {% with product=item.product %}
+                <tr>
+                    <td><img src="{{ product.image.url }}" class="img-fluid cart-img"
+                            style="width: 50px; height: 50px;" /></td>
+                    <td> {{ product.name  }} </td>
+                    <td> &times;{{item.quantity}}</td>
+                </tr>
+                {% endwith %}
                 {% endfor %}
             </table>
 
-            
+
         </div>
     </div>
 </div>
