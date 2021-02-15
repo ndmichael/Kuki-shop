@@ -126,6 +126,24 @@ ul .badge {
 	font-size: 1em;
 }
 
+
+/*** how-to ***/
+
+#how-to {
+	padding: 20px 0;
+}
+
+#how-to .icofont {
+	float: left;;
+}
+
+#how-to h6{
+	font-size: 0.9em !important;
+	font-weight: 100 !important;
+	width: 100%;
+}
+
+
 /***** Featured Images *****/
 
 .featured_product .ft-img {
@@ -295,7 +313,7 @@ section#shop-collections .category-wrapper{
 
 /*** small screens ***/
 @media(max-width: 48em) {
-	
+
 	.landing-page-details{
 		margin: 18vh auto;
 	}
