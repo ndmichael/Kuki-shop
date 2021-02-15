@@ -82,7 +82,7 @@
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown nav-item nav-auth">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Welcome, <span class=" text-warning">{{ request.user.username }}</span>
+                       Welcome, <span class=" text-info">{{ request.user.username }}</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <div class="dropdown-divider"></div>
@@ -108,16 +108,16 @@
             <ul class=" navbar-nav ml-auto d-md-block d-none">
                 <li>
                     {% with total_items=cart|length %}
-                    {% if cart|length > 0 %}
+                    {% if total_items > 0 %}
                     <a href="{% url "cart:cart_detail" %}">
 
-                        <span class="icofont icofont-2x icofont-ui-cart">
+                        <span class="icofont icofont-2x icofont-cart-alt">
                         </span>
                         <span id="cart_count" class="badge cart_count">{{ total_items }}</span>
                     </a>
                     {% else %}
                     <a href="{% url "cart:cart_detail" %}">
-                        <span class="icofont icofont-2x icofont-ui-cart"></span>
+                        <span class="icofont icofont-2x icofont-cart-alt"></span>
                         <span id="cart_count" class="badge cart_count">0</span>
                     </a>
                     {% endif %}

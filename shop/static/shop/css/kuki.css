@@ -54,13 +54,14 @@ p{
 .navbar-expand-lg {
 	/*background-color: #005f69;*/
 	background-color: white;
-	color: black;
+	/* color: #004c5c; */
 	text-decoration: none;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 100 !important;
+	/* color: #004c5c; */
 }
 
 .navbar-dark .navbar-brand{
@@ -76,10 +77,15 @@ p{
 	color: #004c5c;
 }
 
-.navbar-expand-lg a{
+ .navbar-expand-lg a{
 	text-decoration: none;
 	color: #004c5c;
 }
+
+.navbar-expand-lg a:hover{
+	text-decoration: none;
+	color: #33a1c9;;
+} 
 
 
 /***** The css style for the badge *****/
@@ -88,7 +94,6 @@ ul .badge {
 	/* color: #2F92CA; */
 	color: #e10000;
 	padding: 4px 7px;
-	background-color: #FFF;
 	font-size: 1em;
 	border-radius: 50%;
 	position: relative;
