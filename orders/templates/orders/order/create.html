@@ -19,17 +19,53 @@
                 <fieldset>
                     <legend class="border-bottom mb-4"><b>Complete Order</b></legend>
                     {% if request.user.is_authenticated %}
-                    {{ form|crispy }}
-                    <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
-                    {% else %}
+                    <div class="form-row">
+                        <div class="form-group col-md-4 mb-0">
+                          {{ form.design|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-4 mb-0">
+                          {{ form.postal_code|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-4 mb-0">
+                            {{ form.city|as_crispy_field }}
+                          </div>
+                        <div class="form-group col-md-12 mb-0">
+                          {{ form.address|as_crispy_field }}
+                        </div>
+                        
+                    </div>
 
-                    {{ c_form|crispy }}
-                    {{ form|crispy }}
-                    <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
+                    {% else %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6 mb-0">
+                          {{ c_form.first_name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{ c_form.last_name|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{ c_form.email|as_crispy_field }}
+                        </div>
+                    <!-- </div>
+                    <div class="form-row"> -->
+                        <div class="form-group col-md-6 mb-0">
+                          {{ form.design|as_crispy_field }}
+                        </div>
+                        
+                        <div class="form-group col-md-12 mb-0">
+                          {{ form.address|as_crispy_field }}
+                        </div>
+                        <div class="form-group col-md-6 mb-0">
+                            {{ form.postal_code|as_crispy_field }}
+                          </div>
+                        <div class="form-group col-md-6 mb-0">
+                          {{ form.city|as_crispy_field }}
+                        </div>
+                    </div>
+                    
                     {% endif %}
                 </fieldset>
-                <!-- <button type="submit" class="btn btn-lg btn-primary">Complete Order</button> -->
-
+                <button type="submit" class="btn btn-lg btn-primary">Complete Order</button>
             </form>
             {% else %}
             <h1>
