@@ -191,8 +191,6 @@ ul .badge {
 
 }
 
-
-
 #shop-goals .icofont{
 	background: -moz-linear-gradient(#00dcff , #004c5c);
     background: -webkit-linear-gradient(#00dcff , #004c5c);
@@ -286,127 +284,6 @@ section#shop-collections .category-wrapper{
 }
 
 
-/***** The css style for the testimonial section *****/
-
-.box img:nth-child(4){
-	animation: layer4 10s 10s infinite linear;
-}
-
-.box img:nth-child(3){
-	animation: layer3 10s 10s infinite linear;
-}
-
-.box img:nth-child(2){
-	animation: layer2 10s 10s infinite linear;
-}
-
-.box img:nth-child(1){
-	animation: layer1 10s 10s infinite linear;
-}
-
-@keyframes layer4 {
-	70%{
-		transform: translate(160px, -160px);
-		opacity: 1;
-	}
-}
-@keyframes layer3 {
-	70%{
-		transform: translate(120px, -120px);
-		opacity: .8;
-	}
-}
-@keyframes layer2 {
-	70%{
-		transform: translate(80px, -80px);
-		opacity: .8;
-	}
-}
-@keyframes layer1 {
-	70%{
-		transform: translate(40px, -40px);
-		opacity: .8;
-	}
-}
-
-#testimonial-section {
-    padding: 3em 20px 7em;
-	background-color: #36b0c3;
-}
-
-#testimonial-section p strong{
-	color: white;
-	text-transform: uppercase;
-	font-size: 14px;
-
-}
-#testimonial-section p {
-	color: black;
-	margin: 20px 0;
-
-}
-
-#testimonial-section h3{
-	line-height: 0;
-	text-transform: uppercase;
-	font-size: 1.5em;
-	margin-bottom: 2em;
-	color: black;
-}
-
-
-.carousel-control-next, .carousel-control-prev{
-	top: 12em;
-	padding: 10px;
-}
-
-#smiling-customer{
-	color: #004c5c !important;
-	display: inline-block;
-	width: auto;
-	height: auto;
-	z-index: 1000;
-	position: relative;
-	top: -85px;
-	margin-bottom: -20em;
-	border: 10px solid #ffffff;
-	border-radius: 999px;
-	background-color: #f8f9fa;
-	/*background: linear-gradient(#667eea , #764ba2)*/
-}
-
-/***** The css style for the statistic section *****/
-#stats-section {
-    padding: 7em 20px;
-	text-align: center;
-	/*background: black;*/
-}
-
-#stats-section p{
-	font-weight: bolder;
-}
-
-#stats-section .icofont{
-	background: -moz-linear-gradient(#00dcff , #004c5c);
-	background: -webkit-linear-gradient(#00dcff , #004c5c);
-	background: linear-gradient(#00dcff , #004c5c);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	border-radius: 40%;
-	padding: 10px;
-	display: inline-block;
-}
-
-.cart-img {
-    max-height: 120px;
-	width: 100%;
-}
-
-
-/*
-*	Authentication css
-*/
 
 .auth_css {
 	background: #ffffff;
@@ -415,3 +292,15 @@ section#shop-collections .category-wrapper{
 	margin: 10px;
 }
 
+
+/*** small screens ***/
+@media(max-width: 48em) {
+	
+	.landing-page-details{
+		margin: 18vh auto;
+	}
+	
+	#landing-page h1{
+		font-size: 3em;
+	}
+}
