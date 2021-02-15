@@ -46,20 +46,19 @@ h4, h5, h6 {
 p{
 	/* font-family: 'Ubuntu Condensed', sans-serif; */
 	font-family: 'Raleway', sans-serif;
-	color: #495057;
 	font-size: 0.95em;
 	letter-spacing: 1px;
 }
 
 
-.navbar-expand-lg{
+.navbar-expand-lg {
 	/*background-color: #005f69;*/
-	background-color: #004c5c;
+	background-color: white;
+	color: black;
 	text-decoration: none;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link{
-	color: white;
+.navbar-expand-lg .navbar-nav .nav-link {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 100 !important;
 }
@@ -70,11 +69,11 @@ p{
 }
 
 .icofont-ui-cart{
-	color: #ffffff;
+	color: #33a1c9;
 }
 
 .icofont-ui-cart:hover{
-	color: #33a1c9;
+	color: #004c5c;
 }
 
 .navbar-expand-lg a{
@@ -100,8 +99,8 @@ ul .badge {
 
 #landing-page{
 	height: 85vh;
-	/*background-image: linear-gradient(rgba(0, 92, 151,  0.9), rgba(54, 55, 149,  0.9)), url("/static/shop/image/model3.jpg");*/
-	background-image: linear-gradient(rgba(8, 8, 8,  0.8) 100%, rgba(8, 8, 8,  0.8) 100%), url("/static/shop/image/model3.jpg");
+	background-image: linear-gradient(rgba(0, 92, 151,  0.9), rgba(54, 55, 149,  0.9)), url("/static/shop/image/model3.jpg");
+	/* background-image: linear-gradient(rgba(8, 8, 8,  0.9) 100%, rgba(8, 8, 8,  0.9) 100%), url("/static/shop/image/model3.jpg"); */
 	background-size: cover;
 }
 
