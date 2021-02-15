@@ -146,6 +146,13 @@ ul .badge {
 
 /***** Featured Images *****/
 
+.ft-bg-img {
+	height: 500px;
+	width: 100%;
+	object-fit: contain;
+}
+
+
 .featured_product .ft-img {
 	height: 220px; 
 	width: 100%; 
@@ -339,6 +346,15 @@ section#shop-collections .category-wrapper{
 	.featured_product  .ft-details {
 		top: 205px;
 		left: 0;
+	}
+
+	/* reduce height of model images */
+	.ft-bg-img {
+		height: 350px;
+	}
+
+	#shop-goals img{
+		height: 350px;
 	}
 
 }
