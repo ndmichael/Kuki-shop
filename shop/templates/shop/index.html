@@ -42,7 +42,7 @@
 <section id="how-to" class=" bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-6 col-sm-3 border-right  pt-3 pt-md-0">        
+            <div class="col-6 col-md-3 border-right  pt-3 pt-md-0">        
                 <div  class="d-flex align-items-center">
                     <i class="icofont icofont-2x icofont-fast-delivery text-info pr-3"  style="float: left;"></i>
                     <h6>
@@ -51,7 +51,7 @@
                 </div>    
             </div>
 
-            <div class="col-6 col-sm-3 border-right  pt-3 pt-md-0">               
+            <div class="col-6 col-md-3 border-right  pt-3 pt-md-0">               
                 <div  class="d-flex align-items-center">
                     <i class="icofont icofont-2x icofont-sale-discount text-warning pr-3"  style="float: left;"></i>
                     <h6>
@@ -61,7 +61,7 @@
                 
             </div>
 
-            <div class="col-6 col-sm-3 border-right  pt-3 pt-md-0">                
+            <div class="col-6 col-md-3 border-right  pt-3 pt-md-0">                
                 <div  class="d-flex align-items-center">
                     <i class="icofont icofont-2x icofont-free-delivery text-primary pr-3"  style="float: left;"></i>
                     <h6>
@@ -71,7 +71,7 @@
                 
             </div>
 
-            <div class="col-6 col-sm-3 ">       
+            <div class="col-6 col-md-3 ">       
                 <div  class="d-flex align-items-center pt-3 pt-md-0">
                     <i class="icofont icofont-2x icofont-pay text-danger pr-3"  style="float: left;"></i>
                     <h6>
@@ -95,12 +95,12 @@
             </div>
             <div class="col-12 col-md-8">
                 <div class="row mb-5">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="wrapper">
                             <img src="{% static 'shop/image/IMG-20200605-WA0002.jpg' %}" alt=""
                             class="img-fluid ft-img" >
                             <div class=" text-center p-3 ft-details">
-                                <h2>Beautiful & Popular</h2>
+                                <h1 class="h3">Class & Popular</h1>
                                 <a href="" class="btn btn-primary btn-block">
                                     Explore Now
                                 </a>
@@ -108,12 +108,12 @@
                         </div>        
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="wrapper">
                             <img src="{% static 'shop/image/IMG-20200605-WA0048.jpg' %}" alt=""
                             class="img-fluid ft-img">
                             <div class=" text-center p-3 ft-details">
-                                <h2>Hot Sales</h2>
+                                <h1 class="h3">Hot Sales</h1>
                                 <a href="" class="btn btn-primary btn-block">
                                     Explore Now
                                 </a>
@@ -155,7 +155,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-6">
+                    <div class="col-6 col-sm-6 col-md-6">
                         <div class="">
                             <p class="icon-p"><i class="icofont icofont-3x icofont-handshake-deal"></i></p>
                             <h3>Satisfied Customers</h3>
@@ -166,7 +166,7 @@
 
                     </div>
 
-                    <div class="col-12 col-sm-6 col-md-6">
+                    <div class="col-6 col-sm-6 col-md-6">
                         <div class="">
                             <p class="icon-p"><i class="icofont icofont-3x icofont-sale-discount"></i>
                             <h3>Sales Discount</h3>
@@ -177,7 +177,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-6 col-md-6">
+                    <div class="col-6 col-sm-6 col-md-6">
                         <div class="">
                             <p><i class="icofont icofont-3x icofont-stamp"></i></p>
                             <h3>Original Products</h3>
@@ -187,7 +187,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-6">
+                    <div class="col-6 col-sm-6 col-md-6">
                         <div class="">
                             <p><i class="icofont icofont-3x icofont-ssl-security"></i></p>
                             <h3>Shop as a Guest</h3>
@@ -216,9 +216,9 @@
 <section id="shop-collections">
     <section class="container w-100">
         <h2>Shop By Textile Category</h2>
-        <div class="row px-5">
+        <div class="row px-1 px-md-5">
             {% for c in categories %}
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-6 col-md-4">
                 <a href="{{ c.get_absolute_url }}">
                     <div class="category-wrapper">
                         <img src="{{ c.cat_image.url }}" class="w-100 h-100 img-fluid collection-photos"
@@ -234,7 +234,7 @@
 
 
 <!-- testimonial section -->
-<section id="testimonial-section">
+<!-- <section id="testimonial-section">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -243,12 +243,12 @@
             <div class="col-12"></div>        
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- stat section -->
 <section id="stats-section">
     <div class="container">
-        <div class="row">
+        <div class="row  text-center">
             <div class="col-6 col-sm-6 col-md-3">
                 <i class="icofont icofont-5x icofont-people"></i>
                 <h2><span class="counter">13000</span> <span>+</span> </h2>

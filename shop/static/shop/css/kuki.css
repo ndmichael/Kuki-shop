@@ -149,6 +149,7 @@ ul .badge {
 .featured_product .ft-img {
 	height: 220px; 
 	width: 100%; 
+	padding-bottom: 10px;
 	object-fit: cover; 
 	object-position: center; 
 	filter: drop-shadow(0 3px 2px grey);
@@ -158,6 +159,7 @@ ul .badge {
 
 .wrapper{
 	transition: 3000s;
+	padding: 0 20px 10px;
 	overflow: hidden;
 	object-fit: cover; 
 	object-position: center; 
@@ -169,16 +171,16 @@ ul .badge {
 	display: block;
 	width: 100%;
 	transition: transform .7s;
-	transform: translate(0, -110px);
+	transform: translate(0, -60px);
 }
 
 .featured_product  .ft-details {
 	width: 100%;
 	position: absolute;
-	top: 220px;
+	top: 180px;
 	left: 0;
 	transition: transform .5s;
-	background: linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0.5));
+	background: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.75));
 }
 
 
@@ -239,7 +241,7 @@ ul .badge {
 /***** The css style rules for the shop categories and collections *****/
 
 section#shop-collections {
-	padding: 4.5em 2em;
+	padding: 4.5em 1em;
 	/*margin: 2em 0em auto;*/
 	background: #f9f9ff !important;
 	text-align: left;
@@ -321,4 +323,22 @@ section#shop-collections .category-wrapper{
 	#landing-page h1{
 		font-size: 3em;
 	}
+
+	/** featured images **/
+	
+	.wrapper{
+		transition: 3000s;
+		padding: 20px 10px;
+		overflow: hidden;
+		object-fit: cover; 
+		object-position: center; 
+		filter: drop-shadow(0 3px 2px grey);
+		
+	}
+
+	.featured_product  .ft-details {
+		top: 205px;
+		left: 0;
+	}
+
 }
