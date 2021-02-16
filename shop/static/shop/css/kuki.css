@@ -234,7 +234,10 @@ ul .badge {
 }
 
 
-#shop-goals img{
+#shop-goals img {
+
+	padding: 0 !important;
+	margin-bottom: -20px !important;
 	object-fit: contain;
 	object-position: center;
 	height: 500px;
