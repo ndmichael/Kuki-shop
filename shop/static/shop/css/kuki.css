@@ -322,6 +322,21 @@ section#shop-collections .category-wrapper{
 	margin: 10px;
 }
 
+#stats-section {
+	padding: 4.5em 0;
+	background: white;
+
+}
+
+#stats-section i {
+	padding-bottom: 20px !important;
+	display: inline-block;
+	background: linear-gradient(#00dcff , #004c5c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 
 /*** small screens ***/
 @media(max-width: 48em) {
