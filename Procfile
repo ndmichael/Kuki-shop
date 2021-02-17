@@ -1,0 +1,1 @@
+web: gunicorn kukishop.wsgi
