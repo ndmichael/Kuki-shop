@@ -27,7 +27,7 @@ SECRET_KEY = 'd^hd%e*k937l-j8^pu@4ogx09@n=u^7gsj5=&%%)9e3rfr)ip-'
 # DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
 DEBUG = True
 
-ALLOWED_HOSTS = ['kukishop.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ["kukishop.herokuapp.com"]
 SITE_ID = 1
 
 
