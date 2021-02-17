@@ -101,6 +101,9 @@ DATABASES = {
         'NAME': 'kukishop_db',
         'USER': 'postgres',
         'PASSWORD': 'daliMIKE0417',
+        # 'NAME': os.environ.get('KUKISHOP_DB_NAME') ,
+        # 'USER': os.environ.get('KUKISHOP_DB_USER') ,
+        # # 'PASSWORD': os.environ.get('KUKISHOP_DB_PW') ,
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -162,14 +165,20 @@ CART_SESSION_ID = 'cart'
 
 
 # setting environmental variables for S3
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') 
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME2')
 
-AWS_S3_FILE_OVERWRITE = False
+AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID_KUKISHOP') 
+AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY_KUKISHOP') 
+AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME_KUKISHOP') 
+
+
+AWS_S3_FILE_OVERWRITE=False
+AWS_S3_REGION_NAME='us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
-AWS_S3_REGION_NAME = 'us-east-2'
-AWS_DEFAULT_UCL = None
+
+AWS_DEFAULT_UCL=None
+
+# if not DEBUG:
+DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
