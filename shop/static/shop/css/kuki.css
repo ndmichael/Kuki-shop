@@ -104,7 +104,7 @@ ul .badge {
 
 #landing-page{
 	height: 85vh;
-	background-image: linear-gradient(rgba(0, 92, 151,  0.9), rgba(54, 55, 149,  0.9)), url("/static/shop/image/model3.jpg");
+	background-image: linear-gradient(rgba(0, 92, 151,  0.9), rgba(54, 55, 149,  0.9)), url("/static/shop/images/model3.jpg");
 	/* background-image: linear-gradient(rgba(8, 8, 8,  0.9) 100%, rgba(8, 8, 8,  0.9) 100%), url("/static/shop/image/model3.jpg"); */
 	background-size: cover;
 }
