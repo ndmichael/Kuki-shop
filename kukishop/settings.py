@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import logging
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +27,7 @@ SECRET_KEY=os.environ.get('SECRET_KEY_KUKISHOP')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ["kukishop.herokuapp.com"]
 SITE_ID = 1
@@ -218,3 +219,21 @@ Environment.Sandbox,
     'np7yrdnkhz8h7dj2',
     'f8a14f52b496e4465cfb2e1684a075ec'
 )
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
+        },
+    },
+}
+DEBUG_PROPAGATE_EXCEPTIONS = True
