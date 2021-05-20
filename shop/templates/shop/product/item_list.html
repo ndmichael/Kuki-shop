@@ -25,30 +25,33 @@
                 <div class="row">
                     {% for product in products %}
                     <div class="col-12 col-md-4">
+
                         <div class="product-wrapper">
                             <div class="img-box">
                                 <img src="{{ product.image.url }}" class="w-100 img-fluid" />
                             </div>
-                            <div class="product-details">
-                                <h6 class="">{{ product.category }} </h6>
-                                <h5><a href="{{ product.get_absolute_url }}">{{ product.name }}</a> </h5>
-                                <p class="">{{ product.size }} <span class="float-right">&#x20A6;
-                                        {{ product.price }}</span></p>
-                                <div class="faded-details">
-                                    <!-- <form action="{% url "cart:cart_add" product.id %}" method="post"> 
+                            <a href="{{ product.get_absolute_url }}" style="color: inherit;">
+                                <div class="product-details">
+
+                                    <small class="">{{ product.category }} </small>
+                                    <h5>{{ product.name }} </h5>
+                                    <p class="">{{ product.size }} <b class="float-right">&#x20A6;
+                                            {{ product.price }}</b></p>
+                                    <div class="faded-details">
+                                        <!-- <form action="{% url "cart:cart_add" product.id %}" method="post"> 
                                                 {{ cart_product_form }}
                                                  {% csrf_token %}
                                                 <input type="submit" data-product="{{product.pk}}" data-action="add"
                                                 class="btn btn-block btn-primary update-cart" value="Add to cart">
                                             </form> -->
-                                    <button class="btn btn-block btn-primary productValue my-3" data-toggle="modal"
-                                        data-target="#exampleModal" id="product-{{product.id}}" value="{{product.id}}">
-                                        Add to Cart
-                                    </button>
+                                        <button class="btn btn-block btn-primary productValue my-2" data-toggle="modal"
+                                            data-target="#exampleModal" id="product-{{product.id}}"
+                                            value="{{product.id}}">
+                                            Add to Cart
+                                        </button>
+                                    </div>
                                 </div>
-
-                            </div>
-
+                            </a>
                         </div>
 
                     </div>
