@@ -63,13 +63,13 @@
 }
 
 .product-wrapper:hover .product-details{
-	cursor: pointer;
+	/* cursor: pointer; */
 	transform: translateY(0px);
 	
 }
 
 .product-wrapper .product-details{
-	transform: translateY(115px);
+	transform: translateY(80px);
 	z-index: 20;
 	background: #ffffff;
 	transition: transform 0.5s;
