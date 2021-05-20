@@ -2,25 +2,27 @@
 {% load static %}
 
 {%  block content %}
-<div class="container">
+<div class="container py-5">
     <div class="row">
-        <div class="col-4 col-sm-4 mb-4">
-            <img src="{{ product.image.url }} " class="img-fluid">
+        <div class="col-12 col-sm-6">
+            <img src="{{ product.image.url }} " class="img-fluid w-100" style="height: 400px; object-fit:cover">
         </div>
-        <div class="col-4 col-sm-4">
+        <div class="col-12 col-sm-6">
             <h1>{{ product.name }}</h1>
-            <h2><a href="{{ product.category.get_absolute_url }}">{{product.category }}</a></h2>
-            <p class="price">&#x20A6;{{ product.price }}</p> <br /><br />
-        </div>
-        <br /> <br />
-        <div class="col-4 col-sm-6">
+            <h5><a href="{{ product.category.get_absolute_url }}"><small
+                        class=" text-muted">{{product.category }}</small></a></h5>
+                        <p class="text-danger">{{ product.size }} </p>
+            <p class="price my-3" style="font-size:30px;"><b>&#x20A6;{{ product.price }}</b></p>
+            {{ product.description|linebreaks }}
             <form action="{% url "cart:cart_add" product.id %}" method="post">
                 {{ cart_product_form }}
-                {% csrf_token %}
-                <input type="submit" value="Add to cart">
+                {% csrf_token %} <br> <br>
+                <input type="submit" class=" btn btn-primary btn-lg" value="Add To Cart">
             </form>
         </div>
-        {{ product.description|linebreaks }}
+
+
+
     </div>
 </div>
 

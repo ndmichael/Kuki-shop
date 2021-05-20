@@ -1,12 +1,11 @@
-
-#sidebar ul{
+#sidebar ul {
 	list-style-type: none;
 	margin: 0;
 	background-color: white;
 	padding: 10px;
 }
 
-#sidebar ul li{
+#sidebar ul li {
 	padding-top: 5px;
 	text-transform: capitalize;
 	font-size: 1.2em;
@@ -15,8 +14,8 @@
 }
 
 
-#product-listing{
-    padding: 3em 0;
+#product-listing {
+	padding: 3em 0;
 	margin-bottom: 10em;
 }
 
@@ -34,15 +33,15 @@
 	color: #080808;
 }
 
-#product-listing button a{
+#product-listing button a {
 	color: white;
 }
 
-#product-listing button a:hover{
+#product-listing button a:hover {
 	color: white;
 }
 
-.product-wrapper{
+.product-wrapper {
 	/*padding: 20px;*/
 	margin: 2em 0 auto;
 	background: rgba(255, 255, 255, 0.6);
@@ -58,17 +57,17 @@
 
 }
 
-.product-wrapper:hover{
+.product-wrapper:hover {
 	box-shadow: 0px 5px 10px 2px rgba(146, 146, 146, 0.3);
 }
 
-.product-wrapper:hover .product-details{
+.product-wrapper:hover .product-details {
 	/* cursor: pointer; */
 	transform: translateY(0px);
-	
+
 }
 
-.product-wrapper .product-details{
+.product-wrapper .product-details {
 	transform: translateY(80px);
 	z-index: 20;
 	background: #ffffff;
@@ -76,19 +75,19 @@
 	padding: 20px;
 }
 
-.product-wrapper  h5, 
-.product-wrapper  h6,
-.product-wrapper  p  {
+.product-wrapper h5,
+.product-wrapper h6,
+.product-wrapper p {
 	padding: 7px 0;
-}  
-
-.product-wrapper .img-box{
-	background-color: darkgrey;
-	margin-bottom: -6.5em;
-	
 }
 
-.img-box img{
+.product-wrapper .img-box {
+	background-color: darkgrey;
+	margin-bottom: -6.5em;
+
+}
+
+.img-box img {
 	min-height: 210px;
 	max-height: 210px;
 	z-index: 5;
@@ -104,16 +103,16 @@
 	border: 1px solid #333;
 	-webkit-transition: border-color 160ms;
 	transition: border-color 160ms;
-  }
-  
-  #card-number.braintree-hosted-fields-focused {
+}
+
+#card-number.braintree-hosted-fields-focused {
 	border-color: #777;
-  }
-  
-  #card-number.braintree-hosted-fields-invalid {
+}
+
+#card-number.braintree-hosted-fields-invalid {
 	border-color: tomato;
-  }
-  
-  #card-number.braintree-hosted-fields-valid {
+}
+
+#card-number.braintree-hosted-fields-valid {
 	border-color: limegreen;
-  }
+}
