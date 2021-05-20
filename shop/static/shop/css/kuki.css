@@ -10,40 +10,45 @@
 
 
 
-html{
+html {
 	scroll-behavior: smooth;
 }
 
-body{
+body {
 	background-color: #f8f9fa;
 }
 
 /* primary button override */
 .btn-primary {
-    color: #fff;
-    background: linear-gradient(#00dcff , #004c5c);
+	color: #fff;
+	background: linear-gradient(#00dcff, #004c5c);
 	transition: opacity .5s;
 	border: none !important;
 	outline: none !important;
 }
 
-.btn-primary:hover, .btn-primary:active{
+.btn-primary:hover,
+.btn-primary:active {
 	opacity: 0.7;
 	outline: none !important;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
 	font-family: 'MUNICH SANS';
 	letter-spacing: 2px;
 	font-weight: 900;
 	color: #004c5c;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
 	font-family: 'Raleway', sans-serif;
 }
 
-p{
+p {
 	/* font-family: 'Ubuntu Condensed', sans-serif; */
 	font-family: 'Raleway', sans-serif;
 	font-size: 0.95em;
@@ -64,28 +69,29 @@ p{
 	/* color: #004c5c; */
 }
 
-.navbar-dark .navbar-brand{
+.navbar-dark .navbar-brand {
 	font-weight: 900;
 	color: #33a1c9;
 }
 
-.icofont-ui-cart{
+.icofont-ui-cart {
 	color: #33a1c9;
 }
 
-.icofont-ui-cart:hover{
+.icofont-ui-cart:hover {
 	color: #004c5c;
 }
 
- .navbar-expand-lg a{
+.navbar-expand-lg a {
 	text-decoration: none;
 	color: #004c5c;
 }
 
-.navbar-expand-lg a:hover{
+.navbar-expand-lg a:hover {
 	text-decoration: none;
-	color: #33a1c9;;
-} 
+	color: #33a1c9;
+	;
+}
 
 
 /***** The css style for the badge *****/
@@ -102,24 +108,24 @@ ul .badge {
 }
 
 
-#landing-page{
+#landing-page {
 	height: 85vh;
-	background-image: linear-gradient(rgba(0, 92, 151,  0.9), rgba(54, 55, 149,  0.9)), url("/static/shop/images/model3.jpg");
+	background-image: linear-gradient(rgba(0, 92, 151, 0.9), rgba(54, 55, 149, 0.9)), url("/static/shop/images/model3.jpg");
 	background-size: cover;
 }
 
-.landing-page-details{
+.landing-page-details {
 	margin: 23vh auto;
 }
 
-#landing-page h1{
+#landing-page h1 {
 	font-weight: bolder;
 	font-size: 4em;
 	text-transform: uppercase;
 	color: #ffffff;
 }
 
-#landing-page p{
+#landing-page p {
 	color: #FFFFFF;
 	letter-spacing: 2px;
 	font-size: 1em;
@@ -133,10 +139,11 @@ ul .badge {
 }
 
 #how-to .icofont {
-	float: left;;
+	float: left;
+	;
 }
 
-#how-to h6{
+#how-to h6 {
 	font-size: 0.9em !important;
 	font-weight: 100 !important;
 	width: 100%;
@@ -153,24 +160,24 @@ ul .badge {
 
 
 .featured_product .ft-img {
-	height: 220px; 
-	width: 100%; 
+	height: 220px;
+	width: 100%;
 	padding-bottom: 10px;
-	object-fit: cover; 
-	object-position: center; 
+	object-fit: cover;
+	object-position: center;
 	filter: drop-shadow(0 3px 2px grey);
-	
+
 
 }
 
-.wrapper{
+.wrapper {
 	transition: 3000s;
 	padding: 0 20px 10px;
 	overflow: hidden;
-	object-fit: cover; 
-	object-position: center; 
+	object-fit: cover;
+	object-position: center;
 	filter: drop-shadow(0 3px 2px grey);
-	
+
 }
 
 .wrapper:hover .ft-details {
@@ -180,28 +187,28 @@ ul .badge {
 	transform: translate(0, -60px);
 }
 
-.featured_product  .ft-details {
+.featured_product .ft-details {
 	width: 100%;
 	position: absolute;
 	top: 180px;
 	left: 0;
 	transition: transform .5s;
-	background: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.75));
+	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75));
 }
 
 
 
 /***** The css style for shop services and goals *****/
 
-.box{
+.box {
 	position: relative;
 	width: 220px;
 	height: 400px;
-	background: rgba(225,225,225, .1);
-	transform: rotate(-90deg) skew(25deg)  scale(.8);
+	background: rgba(225, 225, 225, .1);
+	transform: rotate(-90deg) skew(25deg) scale(.8);
 }
 
-.box img{
+.box img {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -210,20 +217,20 @@ ul .badge {
 
 
 /* CSS FOR SHOP-GOALS */
-#shop-goals{
+#shop-goals {
 	padding: 4em 0;
 	background-color: #FFFFFF;
 	min-height: 100%;
 
 }
 
-#shop-goals .icofont{
-	background: -moz-linear-gradient(#00dcff , #004c5c);
-    background: -webkit-linear-gradient(#00dcff , #004c5c);
-    background: linear-gradient(#00dcff , #004c5c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+#shop-goals .icofont {
+	background: -moz-linear-gradient(#00dcff, #004c5c);
+	background: -webkit-linear-gradient(#00dcff, #004c5c);
+	background: linear-gradient(#00dcff, #004c5c);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
 	display: inline-block;
 	padding-bottom: 20px;
 }
@@ -244,7 +251,7 @@ ul .badge {
 	width: 100%;
 	transform: translate(0, -40px);
 	filter: drop-shadow(30px 0 7px lightgray);
-} 
+}
 
 
 /***** The css style rules for the shop categories and collections *****/
@@ -269,31 +276,31 @@ section#shop-collections {
 
 }
 
-.category-wrapper:hover{
+.category-wrapper:hover {
 	box-shadow: 2px 2px 7px grey;
 	text-decoration: underline;
 	cursor: pointer;
 }
 
-section#shop-collections a{
+section#shop-collections a {
 	text-decoration: none;
 }
 
-.text-pin{
+.text-pin {
 	color: #000;
 	background-color: rgba(255, 255, 255, 1);
-	-webkit-transform: translate(-2px,-68px);
-	transform: translate(-2px,-68px);
+	-webkit-transform: translate(-2px, -68px);
+	transform: translate(-2px, -68px);
 	padding: 5px;
 	display: inline-block;
 
 }
 
-.text-pin:hover{
+.text-pin:hover {
 	color: #004c5c;
 }
 
-.collection-photos{
+.collection-photos {
 	max-height: 230px;
 	border-radius: 20px;
 	transform: translate(0px, -30px);
@@ -303,12 +310,12 @@ section#shop-collections a{
 
 }
 
-section#shop-collections .category-wrapper{
+section#shop-collections .category-wrapper {
 	margin-top: 4em;
-	padding:  0px 1em 0px ;
+	padding: 0px 1em 0px;
 	background-color: #FFFFFF;
 	border-radius: 20px;
-	box-shadow: 2px 2px 7px rgba(80,80, 80, 0.3);
+	box-shadow: 2px 2px 7px rgba(80, 80, 80, 0.3);
 
 }
 
@@ -330,37 +337,37 @@ section#shop-collections .category-wrapper{
 #stats-section i {
 	padding-bottom: 20px !important;
 	display: inline-block;
-	background: linear-gradient(#00dcff , #004c5c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+	background: linear-gradient(#00dcff, #004c5c);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
 }
 
 
 /*** small screens ***/
 @media(max-width: 48em) {
 
-	.landing-page-details{
+	.landing-page-details {
 		margin: 18vh auto;
 	}
-	
-	#landing-page h1{
+
+	#landing-page h1 {
 		font-size: 3em;
 	}
 
 	/** featured images **/
-	
-	.wrapper{
+
+	.wrapper {
 		transition: 3000s;
 		padding: 20px 10px;
 		overflow: hidden;
-		object-fit: cover; 
-		object-position: center; 
+		object-fit: cover;
+		object-position: center;
 		filter: drop-shadow(0 3px 2px grey);
-		
+
 	}
 
-	.featured_product  .ft-details {
+	.featured_product .ft-details {
 		top: 205px;
 		left: 0;
 	}
@@ -370,7 +377,7 @@ section#shop-collections .category-wrapper{
 		height: 350px;
 	}
 
-	#shop-goals img{
+	#shop-goals img {
 		height: 350px;
 	}
 
