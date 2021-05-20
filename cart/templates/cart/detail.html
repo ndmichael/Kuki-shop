@@ -8,28 +8,31 @@
     <div class="row my-5">
         <div class="col-md-8">
             {% if cart %}
-            {% for item in cart %}           
+            {% for item in cart %}
             {% with product=item.product %}
 
-            <div class="row m-2 border-bottom p-2 bg-white" >
+            <div class="row m-2 border-bottom p-2 bg-white">
                 <div class="col-12 col-sm-12 col-md-3">
-                    <img src="{{ product.image.url }}" class="img-thumbnail img-fluid cart-img" />                        
+                    <img src="{{ product.image.url }}" class="img-thumbnail img-fluid cart-img w-100" style="height:120px;
+                    object-fit: cover;" />
                 </div>
 
-                 <div class="col-12 col-md-6">
-                     <h6>{{ product.category }}</h6>
-                     <h4>{{ product.name }}</h4>
+                <div class="col-12 col-md-6">
+                    <h6>{{ product.category }}</h6>
+                    <h4>{{ product.name }}</h4>
 
                     <div class="py-2">
                         <a href="{% url "cart:cart_remove" product.id %}" class="btn btn-outline-danger btn-sm">
                             <i class="icofont icofont-delete-alt pr-2"></i>
-                             Remove
-                        </a> 
-    
-                        <form class="form-group pl-2" action="{% url "cart:cart_add" product.id %}"  method="post" style="display: inline-block;">
+                            Remove
+                        </a>
+
+                        <form class="form-group pl-2" action="{% url "cart:cart_add" product.id %}" method="post"
+                            style="display: inline-block;">
                             {{ item.update_quantity_form.quantity }}
                             {{ item.update_quantity_form.update }}
-                            <input id="product{{product.id}}" data-id="{{product.id}}" class="btn btn-primary btn-sm update_cart" type="submit" value="Update">
+                            <input id="product{{product.id}}" data-id="{{product.id}}"
+                                class="btn btn-primary btn-sm update_cart" type="submit" value="Update">
                             {% csrf_token %}
                         </form>
                     </div>
@@ -37,7 +40,7 @@
 
                 <div class="col-12 col-md-3 text-right">
                     <p>&#x20A6;{{ item.price }}</p>
-                    <b class="border-bottom">Accm Price</b>
+                    <b class="border-bottom">Sub Total</b>
                     <p>&#x20A6;{{ item.total_price }}</p>
                 </div>
             </div>
@@ -45,17 +48,17 @@
             {% endwith %}
             {% endfor %}
             {% else %}
-                <div class="row my-5 text-center">
-                    <div class=" col-12">
-                        <span class=" icofont icofont-10x icofont-cart-alt">   
-                        </span>
-                        <h3> Cart Empty, Shop with us. 
-                            <a href="{% url "shop:product_list" %}" class="btn btn-primary">
-                                Shop Now
-                            </a>
-                        </h3>
-                    </div>
+            <div class="row my-5 text-center">
+                <div class=" col-12">
+                    <span class=" icofont icofont-10x icofont-cart-alt">
+                    </span>
+                    <h3> Cart Empty, Shop with us.
+                        <a href="{% url "shop:product_list" %}" class="btn btn-primary">
+                            Shop Now
+                        </a>
+                    </h3>
                 </div>
+            </div>
             {% endif %}
 
         </div>
@@ -80,9 +83,9 @@
             </table>
 
             <div class="text-center">
-                <a href="{% url "orders:order_create" %}" class="btn btn-info btn-block" >
+                <a href="{% url "orders:order_create" %}" class="btn btn-info btn-block">
                     Checkout</button>
-                </a> 
+                </a>
                 <hr />
                 <a href="{% url "shop:product_list" %}" class="btn btn-outline-dark btn-block">
                     Continue Shopping
