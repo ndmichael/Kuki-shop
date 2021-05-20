@@ -4,6 +4,7 @@ from .forms import CartAddForm
 from shop.models import Product
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse, HttpResponse
+from django.contrib import messages
 
 
 # Create your views here.
@@ -16,8 +17,9 @@ def cart_add_with_ajax(request):
         cart.add(
             product= product,
         )
-        cart_total = len(cart)
-        return JsonResponse({"result": "Added Success", "cart_total": cart_total})
+        # cart_total = len(cart)
+        cart_total = cart.__len__()
+        return JsonResponse({"message": "Item added to cart successfully", "cart_total": cart_total})
     return HttpResponse("Error access denied")
 
 

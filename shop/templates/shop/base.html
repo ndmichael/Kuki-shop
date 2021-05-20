@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en" prefix=”og: http://ogp.me/ns#">
+<html lang="en" prefix=”og: http://ogp.me/ns#"> <head>
 
-<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" name="image" content="kukishop.herokuapp.com/static/shop/images/kukithumbnail.png" />
+{% if title %}
+<title>Kuki-Textiles-{{ title }}</title>
+{% else %}
+<title>Kuki-Textiles</title>
+{% endif %}
+<link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/icofont/icofont.min.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/kuki.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/footerCss.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/css/productCss.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/fonts/manrope/stylesheet.css' %}" />
+<link rel="stylesheet" href="{% static 'shop/fonts/font/stylesheet.css' %}" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" name="image" content="kukishop.herokuapp.com/static/shop/images/kukithumbnail.png"/>
-    {% if title %}
-    <title>Kuki-Textiles-{{ title }}</title>
-    {% else %}
-    <title>Kuki-Textiles</title>
-    {% endif %}
-    <link rel="stylesheet" href="{% static 'shop/css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/css/icofont/icofont.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/css/kuki.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/css/footerCss.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/css/productCss.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/fonts/manrope/stylesheet.css' %}" />
-    <link rel="stylesheet" href="{% static 'shop/fonts/font/stylesheet.css' %}" />
-
-    <script>
-        var user = '{{request.user}}';
-    </script>
+<script>
+    var user = '{{request.user}}';
+</script>
 
 
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-expand-lg border-bottom">
         <div class="container">
             <a class="navbar-brand" href="{% url 'shop:shop-home' %}">KUKI-SHOP</a>
             <ul class=" navbar-nav ml-auto d-block d-md-none">
                 <li>
                     {% with total_items=cart|length %}
+                    <a href="{% url "cart:cart_detail" %}">
+                        <span class="icofont icofont-2x icofont-cart-alt">
+                        </span>
+                        {% if cart|length > 0 %}
+                        <span id="cart_count" class="badge cart_count">{{ total_items }}</span>
+                        {% else %}
+                        <span id="cart_count" class="badge cart_count">{{ total_items }}</span>
+                        {% endif %}
+                    </a>
+                    {% endwith %}
+                    {% comment %} {% with total_items=cart|length %}
                     {% if cart|length > 0 %}
                     <a href="{% url "cart:cart_detail" %}">
                         <span class="icofont icofont-2x icofont-cart-alt">
@@ -46,9 +55,8 @@
                         <span class="icofont icofont-2x icofont-cart-alt"></span>
                         <span id="cart_count" class="badge cart_count">0</span>
                     </a>
-                    
                     {% endif %}
-                    {% endwith %}
+                    {% endwith %} {% endcomment %}
                 </li>
             </ul>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -84,18 +92,19 @@
             <ul class="navbar-nav d-flex flex-row">
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown nav-item nav-auth" style="float: left;">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Welcome, <span class=" text-info">{{ request.user.username }}</span>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome, <span class=" text-info">{{ request.user.username }}</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="{% url 'account_logout' %}">Logout </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout </a>
                     </div>
                 </li>
                 {% else %}
                 <li class="nav-item mt-2 d-block">
                     <a class="nav-link" href="{% url 'account_login' %}">
-                            LOGIN
+                        LOGIN
                     </a>
                 </li>
                 <li class="nav-item mr-2 d-none d-md-block">
@@ -108,7 +117,7 @@
                 {% endif %}
             </ul>
 
-            <ul class=" navbar-nav  d-md-inline-block d-none">     
+            <ul class=" navbar-nav  d-md-inline-block d-none">
                 <li>
                     {% with total_items=cart|length %}
                     {% if total_items > 0 %}
@@ -132,10 +141,30 @@
         </div>
     </nav>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    {% comment %} <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> {% endcomment %}
+                    <span class="btn-close" data-dismiss="modal" aria-label="Close">
+                        <i class="icofont icofont-2x icofont-close text-danger"></i>
+                    </span>
+                </div>
+                <div class="modal-body text-success">
+                    Cart successfully   Added
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">CONTINUE SHOPPING</button>
+                    <a type="button" href="{% url "cart:cart_detail" %}" class="btn btn-primary">VIEW CART</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% block content %}
 
     {% endblock content %}
-
 
     <section id="footer-section">
         <footer class="container py-1">
@@ -197,7 +226,7 @@
                         'action': 'post'
                     },
                     success: function (response) {
-                        if (response['result']) {
+                        if (response) {
                             $('.cart_count').text(response['cart_total']);
                             console.log(user);
                         }
@@ -220,7 +249,6 @@
 
             });
         });
-
     </script>
     <script src="{% static 'shop/js/jquery.waypoints.min.js' %}"></script>
     <script src="{% static 'shop/js/jquery.counterup.min.js' %}"></script>
@@ -241,7 +269,6 @@
             backSpeed: 70,
             loop: true
         });
-
     </script>
 
     <script>
