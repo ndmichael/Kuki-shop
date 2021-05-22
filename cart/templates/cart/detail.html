@@ -32,7 +32,7 @@
                             {{ item.update_quantity_form.quantity }}
                             {{ item.update_quantity_form.update }}
                             <input id="product{{product.id}}" data-id="{{product.id}}"
-                                class="btn btn-primary btn-sm update_cart" type="submit" value="Update">
+                                class="btn btn-outline-primary btn-sm update_cart" type="submit" value="Update">
                             {% csrf_token %}
                         </form>
                     </div>
@@ -40,9 +40,10 @@
 
                 <div class="col-12 col-md-3 text-right">
                     <p>&#x20A6;{{ item.price }}</p>
-                    <b class="border-bottom">Sub Total</b>
-                    <p>&#x20A6;{{ item.total_price }}</p>
+                    <p class="border-bottom">Sub Total</p>
+                    <p><b>&#x20A6;{{ item.total_price }}</b></p>
                 </div>
+                
             </div>
 
             {% endwith %}
@@ -90,7 +91,7 @@
                 <a href="{% url "shop:product_list" %}" class="btn btn-outline-dark btn-block">
                     Continue Shopping
                 </a>
-                <small class="float-left p-2"><Q>Do you have any Questions?</Q> <a href="href">Contact Us</a></small>
+                <small class="float-left p-2"><Q>Do you have any Questions?</Q> <a href="#">Contact Us</a></small>
             </div>
 
             {% endif %}
