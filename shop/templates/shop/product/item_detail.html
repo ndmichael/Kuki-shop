@@ -9,14 +9,14 @@
         </div>
         <div class="col-12 col-sm-6">
             <h1>{{ product.name }}</h1>
-            <h5><a href="{{ product.category.get_absolute_url }}"><small
-                        class=" text-muted">{{product.category }}</small></a></h5>
-                        <p class="text-danger">{{ product.size }} </p>
-            <p class="price my-3" style="font-size:30px;"><b>&#x20A6;{{ product.price }}</b></p>
-            {{ product.description|linebreaks }}
+            <h5><a href="{{ product.category.get_absolute_url }}">
+            <small class=" text-muted">{{product.category }}</small></a></h5>
+            <p class="text-danger">{{ product.size }} </p>
+            <p class="price my-3" style="font-size:30px;"><b>&#x20A6;{{ product.price }}</b></p>            
+            <p class=" border-top border-bottom py-2"> {{ product.description }}  </p>
             <form action="{% url "cart:cart_add" product.id %}" method="post">
                 {{ cart_product_form }}
-                {% csrf_token %} <br> <br>
+                {% csrf_token %}  <br /> <br />
                 <input type="submit" class=" btn btn-primary btn-lg" value="Add To Cart">
             </form>
         </div>
