@@ -1,10 +1,6 @@
 /* cart nav css */
 
-@import url('https://fonts.googleapis.com/css2? \
-	family=EB+Garamond&family=Oswald:wght@700& \
-	family=Roboto+Slab:wght@100&\
-	family=Ubuntu:wght@700&\
-	family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&family=Ubuntu:wght@700&family=Berkshire+Swash&display=swap');
 
 
 
@@ -53,6 +49,14 @@ p {
 	font-family: 'Raleway', sans-serif;
 	font-size: 0.95em;
 	letter-spacing: 1px;
+}
+
+.fw500 {
+	font-weight: 500;
+}
+
+.fw700 {
+	font-weight: 700;
 }
 
 
