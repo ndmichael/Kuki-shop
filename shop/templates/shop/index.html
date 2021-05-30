@@ -215,7 +215,7 @@
             {% for c in categories %}
             <div class="col-12 col-sm-6 col-md-4">
                 <a href="{{ c.get_absolute_url }}">
-                    <div class="category-wrapper">
+                    <div class="category-wrapper shadow">
                         <img src="{{ c.cat_image.url }}" class="w-100 h-100 img-fluid collection-photos"
                             alt="{{ c.name }} " />
                         <h4 class="text-pin fw700">{{ c.name }}</h4>
