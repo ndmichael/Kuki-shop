@@ -5,22 +5,12 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Customer(models.Model) :
+class Order(models.Model):
+
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField()
-
-    def __str__(self):
-        return f" {self.first_name} {self.last_name}"
-        
-
-class Order(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, blank=True, null=True)
-    # customer = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
-    # first_name = models.CharField(max_length=60)
-    # last_name = models.CharField(max_length=60)
-    # email = models.EmailField()
     address = models.CharField(max_length=250)
     design = models.CharField(max_length=100)
     postal_code = models.CharField(max_length=20)

@@ -1,28 +1,7 @@
 from django import forms
-from .models import Order, Customer
+from .models import Order
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column, Field, Div
-
-class CustomerForm(forms.ModelForm) :
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.helper = FormHelper()
-    #     self.helper.layout = Layout(
-    #     Div(
-    #         Div('first_name', css_class='col-sm-6'),
-    #         Div('last_name', css_class='col-sm-6'),  
-    #     css_class='form-row'), 
-    # )
-    #         # Row(
-    #         #     Column('first_name', css_class='form-group col-md-6 mb-0'),
-    #         #     Column('last_name', css_class='form-group col-md-6 mb-0'), 
-    #         #     css_class='form-row'
-    #         # ), 'email'
-   
-    # # )
-    class Meta:
-        model = Customer
-        fields =['first_name', 'last_name', 'email']
 
 
 class OrderForm(forms.ModelForm):
@@ -47,4 +26,4 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        fields =['design','postal_code',  'address',  'city' ]
+        fields =['first_name', 'last_name', 'email','design','postal_code',  'address',  'city' ]
