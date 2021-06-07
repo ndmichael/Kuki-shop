@@ -200,6 +200,7 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 ACCOUNT_FORMS = {'signup': 'customer.forms.MyCustomSignupForm'}
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 
 
 
