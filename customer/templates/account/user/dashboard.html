@@ -2,18 +2,37 @@
 {% load static %}
 
 {% block content %}
-    <section id="dashboard">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12">
-                    <h1><span class="text-info">{{request.user.username}}</span> dashboard</h1>
-                    {% for order in orders %}
-                <h2>{{order}}</h2>
-            {% endfor %}
-                </div>
+<section id="dashboard">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12">
+                <h1><span class="text-info">{{request.user.username}}</span> dashboard</h1>
             </div>
-
-            
         </div>
-    </section>
+
+        <div class="row ">
+            <div class="col-12 ">
+                {% for order in orders %}
+                <div class=" d-flex w-100 bg-success">
+                    <p class="p-2 ">{{order.created}}</p>
+                </div>
+
+                {% for item in order.items.all %}
+                <div class="col-12 d-flex py-3">
+                    <div class="pr-2">
+                        <img src="{{item.product.image.url}}" class="img-fluid" style="height:100px; width:100px;" />
+                    </div>
+                    <div class="align-self-center">
+                        <h3> {{item.product.name}} </h3>
+                        <p> ${{item.product.price}} </p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</section>
 {% endblock content %}
