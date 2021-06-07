@@ -13,8 +13,6 @@ from django.template.loader import render_to_string
 from django.contrib.admin.views.decorators import staff_member_required
 import weasyprint
 
-# Create your views here.
-
 
 def order_create(request):
     cart = Cart(request)
@@ -65,3 +63,8 @@ def admin_order_pdf(request, order_id):
 
     return response
 
+
+def user_orders (request):
+    user_id = request.user.id
+    orders = Order.objects.filter(user=user_id)
+    return orders
