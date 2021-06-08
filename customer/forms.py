@@ -2,7 +2,16 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-from allauth.account.forms import SignupForm
+from allauth.account.forms import SignupForm, LoginForm
+
+
+class SelfLoginForm (LoginForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields["login"].widget.attrs.update({'class': 'form-control-lg rounded-pill'})
+        self.fields["password"].widget.attrs.update({'class': 'form-control-lg rounded-pill'})
+        
 
 
 class MyCustomSignupForm(SignupForm):
