@@ -197,7 +197,7 @@ ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "account_login"
 # 1 day 
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 
-ACCOUNT_FORMS = {'signup': 'customer.forms.MyCustomSignupForm'}
+ACCOUNT_FORMS = {'signup': 'customer.forms.MyCustomSignupForm', 'login': 'customer.forms.SelfLoginForm'}
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
